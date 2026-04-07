@@ -19,7 +19,7 @@ html {
 
 /* Variables CSS para colores consistentes */
 :root {
-    
+    --primary-color: #2563eb;
     --primary-dark: #1e40af;
     --secondary-color: #1f2937;
     --accent-color: #10b981;
