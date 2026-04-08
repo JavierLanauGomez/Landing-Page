@@ -1,292 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Desarrollador de aplicaciones junior especializado en Java y JavaScript. Graduado en Desarrollo de Aplicaciones Multiplataforma (DAM) con experiencia web y aplicaciones de escritorio. Disponible para proyectos freelance y colaboraciones.">
-    <meta name="keywords" content="desarrollador junior, Java, JavaScript, DAM, aplicaciones móviles, desarrollo web">
-    <title>Javier Lanau  - Desarrollador Full Stack | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javier Lanau Gomez</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ===== HEADER CON NAVEGACIÓN ===== -->
-    <header>
-        <nav>
-            <a href="#home" class="logo">Javier Lanau</a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Desarrollador Full Stack</h1>
-            <p>Graduado en DAM con sólidos conocimientos en Java y JavaScript. Listo para aportar valor a tu equipo y crecer profesionalmente.</p>
-         
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <nav>
+      <a href="#inicio" class="logo">Javier Lanau Gomez</a>
+      <button class="menu-toggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO / INICIO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>Bienvenido</h1>
+      <p>Estoy aprendiendo desarrollo web</p>
+      <a href="#sobre" class="cta-button">Conoce más</a>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre" class="about fade-in">
+    <div class="container">
+      <h2 class="section-title">Sobre mí</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <div class="profile-img">👨‍💻</div>
         </div>
-    </section>
-
-    <!-- ===== SOBRE MÍ ===== -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="profile-img">AM</div>
-                </div>
-                <div class="about-text">
-                    <h3>¡Hola! Soy Javier Lanau</h3>
-                    <p>Desarrollador de aplicaciones <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>. Durante mis estudios he trabajado con Java, Android Studio, bases de datos y desarrollo web.</p>
-                    <p>Actualmente estoy especializándome en <strong>JavaScript moderno</strong> y sus frameworks para ampliar mis habilidades en desarrollo frontend y fullstack. Me caracterizo por ser una persona responsable, con gran capacidad de aprendizaje y motivación para enfrentar nuevos retos técnicos.</p>
-                    
-                    
-                    <div class="tech-stack">
-                        <span class="tech-item">Java</span>
-                        <span class="tech-item">JavaScript</span>
-                        <span class="tech-item">Android Studio</span>
-                        <span class="tech-item">HTML5 & CSS3</span>
-                        <span class="tech-item">MySQL</span>
-                        <span class="tech-item">Git</span>
-                        <span class="tech-item">React</span>
-                    </div>
-                </div>
-            </div>
+        <div class="about-text">
+          <h3>Frontend Developer</h3>
+          <p>HTML, CSS y JavaScript</p>
+          <p>Aprendiendo APIs y Backend</p>
+          <p>Objetivo: Ser desarrollador junior</p>
+          <div class="tech-stack">
+            <span class="tech-item">HTML</span>
+            <span class="tech-item">CSS</span>
+            <span class="tech-item">JavaScript</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===== PROYECTOS / PORTFOLIO ===== -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <p class="section-subtitle">Algunos proyectos que he desarrollado durante mi formación y práctica personal</p>
-            
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3>TaskManager Pro</h3>
-                        <p>Aplicación Android nativa para gestión de tareas personales con base de datos SQLite, recordatorios y categorías personalizables.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Android</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Material Design</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver Demo</a>
-                            <a href="#" class="project-link">Código GitHub</a>
-                        </div>
-                    </div>
-                </div>
+  <!-- PROYECTOS -->
+  <section id="proyectos" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-subtitle">Estoy trabajando en varios proyectos de desarrollo web.</p>
+    </div>
+  </section>
 
-                <div class="project-card fade-in">
-                    <div class="project-image">💻</div>
-                    <div class="project-content">
-                        <h3>Restaurante La Terraza</h3>
-                        <p>Landing page responsive para restaurante local con carta interactiva, galería de imágenes y formulario de reservas funcional.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Ver Sitio</a>
-                            <a href="#" class="project-link">Código GitHub</a>
-                        </div>
-                    </div>
-                </div>
+  <!-- SKILLS -->
+  <section id="skills" class="section fade-in">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-subtitle">Tengo conocimientos en HTML, CSS y JavaScript.</p>
+    </div>
+  </section>
 
-                <div class="project-card fade-in">
-                    <div class="project-image">🔢</div>
-                    <div class="project-content">
-                        <h3>Calculadora Científica Web</h3>
-                        <p>Calculadora web avanzada con operaciones básicas y científicas, historial de cálculos y interfaz intuitiva desarrollada en JavaScript puro.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">CSS Grid</span>
-                            <span class="tech-tag">LocalStorage</span>
-                            <span class="tech-tag">PWA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Probar App</a>
-                            <a href="#" class="project-link">Código GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Javier Lanau Gomez</p>
+    </div>
+  </footer>
 
-    <!-- ===== SERVICIOS / HABILIDADES ===== -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Servicios que Ofrezco</h2>
-            <p class="section-subtitle">Como desarrollador junior, estos son los servicios en los que me especializo</p>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">📱</div>
-                    <h3>Desarrollo Android</h3>
-                    <p>Creación de aplicaciones móviles nativas para Android utilizando Java y Android Studio. Desde apps sencillas hasta proyectos más complejos con bases de datos.</p>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">🌐</div>
-                    <h3>Desarrollo Web</h3>
-                    <p>Desarrollo de sitios web responsivos y modernos con HTML5, CSS3 y JavaScript. Landing pages, sitios corporativos y aplicaciones web interactivas.</p>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">💾</div>
-                    <h3>Bases de Datos</h3>
-                    <p>Diseño e implementación de bases de datos relacionales con MySQL y SQLite. Optimización de consultas y modelado de datos eficiente.</p>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔧</div>
-                    <h3>Mantenimiento y Soporte</h3>
-                    <p>Mantenimiento de aplicaciones existentes, corrección de errores, mejoras de rendimiento y implementación de nuevas funcionalidades.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BENEFICIOS / DIFERENCIADORES ===== -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">¿Por Qué Contratarme?</h2>
-            <p class="section-subtitle">Ventajas de trabajar con un desarrollador junior comprometido y en constante aprendizaje</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Aprendizaje Rápido</h3>
-                    <p>Capacidad demostrada para adquirir nuevas tecnologías y adaptarme a diferentes entornos de desarrollo.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Enfoque en Resultados</h3>
-                    <p>Orientado a cumplir objetivos y entregar proyectos de calidad en los tiempos establecidos.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Tarifas Competitivas</h3>
-                    <p>Como desarrollador junior, ofrezco precios accesibles sin comprometer la calidad del trabajo.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">🤝</div>
-                    <h3>Comunicación Clara</h3>
-                    <p>Mantengo comunicación constante durante el desarrollo, con reportes regulares de progreso.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">📚</div>
-                    <h3>Actualización Continua</h3>
-                    <p>Siempre al día con las últimas tendencias y mejores prácticas en desarrollo de software.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">⭐</div>
-                    <h3>Código Limpio</h3>
-                    <p>Escribo código bien documentado, organizado y siguiendo las mejores prácticas de la industria.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TESTIMONIOS ===== -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Lo que Dicen de Mí</h2>
-            <p class="section-subtitle">Comentarios de profesores, compañeros y primeros colaboradores</p>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Alex demostró gran dedicación durante el curso de DAM. Sus proyectos siempre estaban bien estructurados y documentados. Tiene futuro en el desarrollo de software."</p>
-                    <p class="testimonial-author">- María González, Profesora de Programación</p>
-                </div>
-
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Trabajé con Alex en un proyecto grupal y me impresionó su capacidad para resolver problemas complejos. Es muy colaborativo y siempre aporta buenas ideas."</p>
-                    <p class="testimonial-author">- Carlos Ruiz, Compañero de Clase</p>
-                </div>
-
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Alex desarrolló mi primera landing page y quedé encantado con el resultado. Profesional, rápido y con muy buena comunicación durante todo el proceso."</p>
-                    <p class="testimonial-author">- Ana López, Emprendedora</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FORMULARIO DE CONTACTO ===== -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">¡Hablemos de tu Proyecto!</h2>
-            <p class="section-subtitle">¿Tienes una idea? ¿Necesitas un desarrollador junior para tu equipo? Contáctame y trabajemos juntos.</p>
-            
-            <form class="contact-form" id="contact-form">
-                <div id="success-message" class="success-message" style="display: none;">
-                    ¡Mensaje enviado correctamente! Te responderé en menos de 24 horas.
-                </div>
-
-                <div class="form-group">
-                    <label for="name">Nombre completo *</label>
-                    <input type="text" id="name" name="name" required>
-                    <div class="error-message" id="name-error"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                    <div class="error-message" id="email-error"></div>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Asunto</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Mensaje *</label>
-                    <textarea id="message" name="message" required placeholder="Cuéntame sobre tu proyecto, qué necesitas desarrollar, plazos, presupuesto aproximado..."></textarea>
-                    <div class="error-message" id="message-error"></div>
-                </div>
-
-                <button type="submit" class="submit-btn">Enviar Mensaje</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="mailto:j.lanau.gomez@gmail.com" title="Email">✉️</a>
-                <a href="https://linkedin.com/in/javier-lanau-dev" title="LinkedIn" target="_blank">🔗</a>
-                <a href="https://github.com/JavierLanau-dev" title="GitHub" target="_blank">⚡</a>
-                <a href="https://twitter.com/JavierLanau_dev" title="Twitter" target="_blank">🐦</a>
-            </div>
-            <p>&copy; 2026 Javier Lanau - Desarrollador Full Stack. Todos los derechos reservados.</p>
-            <p>📍 Madrid, España | 📞 +34 635 500 186 | ✉️ j.lanau.gomez@gmail.com</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
