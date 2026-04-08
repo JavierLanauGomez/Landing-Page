@@ -65,6 +65,31 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop;
 });
 
+// ===== MODAL CONTACTO =====
+const btnContacto = document.getElementById('btn-contacto');
+const modalContacto = document.getElementById('modal-contacto');
+const modalCerrar = document.getElementById('modal-cerrar');
+
+btnContacto.addEventListener('click', () => {
+    modalContacto.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+
+function cerrarModal() {
+    modalContacto.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+modalCerrar.addEventListener('click', cerrarModal);
+
+modalContacto.addEventListener('click', (e) => {
+    if (e.target === modalContacto) cerrarModal();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') cerrarModal();
+});
+
 // ===== TYPING EFFECT EN EL HERO =====
 const heroTyped = document.getElementById('hero-typed');
 if (heroTyped) {
