@@ -92,8 +92,12 @@ nav {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--white);
     text-align: center;
-    padding: 120px 2rem 80px;
+    padding: 2rem;
     margin-top: 70px;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
@@ -218,12 +222,7 @@ section {
     font-weight: 500;
 }
 
-/* ===== PROYECTOS ===== */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
+
 
 .project-card {
     background: var(--white);
@@ -397,84 +396,6 @@ section {
 .testimonial-author {
     font-weight: 600;
     color: var(--primary-color);
-}
-
-/* ===== FORMULARIO DE CONTACTO ===== */
-.contact {
-    background: var(--secondary-color);
-    color: var(--white);
-}
-
-.contact .section-title {
-    color: var(--white);
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.submit-btn {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    width: 100%;
-}
-
-.submit-btn:hover {
-    background: var(--primary-dark);
-}
-
-.error-message {
-    color: #ef4444;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-.success-message {
-    background: var(--accent-color);
-    color: var(--white);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    text-align: center;
 }
 
 /* ===== FOOTER ===== */
