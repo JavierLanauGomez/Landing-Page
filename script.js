@@ -1,25 +1,24 @@
 // ===== NAVEGACIÓN MÓVIL =====
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+const alternarMenu = document.querySelector('.menu-toggle');
+const enlacesNavegacion = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+alternarMenu.addEventListener('click', () => {
+    enlacesNavegacion.classList.toggle('active');
 });
 
-// Cerrar menú al hacer click en un enlace
-navLinks.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-        navLinks.classList.remove('active');
+enlacesNavegacion.addEventListener('click', (evento) => {
+    if (evento.target.tagName === 'A') {
+        enlacesNavegacion.classList.remove('active');
     }
 });
 
 // ===== SCROLL SUAVE PARA NAVEGACIÓN =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+    enlace.addEventListener('click', function (evento) {
+        evento.preventDefault();
+        const destino = document.querySelector(this.getAttribute('href'));
+        if (destino) {
+            destino.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -28,194 +27,62 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== ANIMACIONES AL HACER SCROLL =====
-const observerOptions = {
+const opcionesObservador = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+        if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
         }
     });
-}, observerOptions);
+}, opcionesObservador);
 
-// Observar todos los elementos con clase fade-in
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// ===== VALIDACIÓN Y ENVÍO DE FORMULARIO =====
-const contactForm = document.getElementById('contact-form');
-const successMessage = document.getElementById('success-message');
-
-// Función para mostrar errores
-function showError(fieldId, message) {
-    const errorElement = document.getElementById(fieldId + '-error');
-    errorElement.textContent = message;
-    document.getElementById(fieldId).style.borderColor = '#ef4444';
-}
-
-// Función para limpiar errores
-function clearError(fieldId) {
-    const errorElement = document.getElementById(fieldId + '-error');
-    errorElement.textContent = '';
-    document.getElementById(fieldId).style.borderColor = '#e5e7eb';
-}
-
-// Función para validar email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Validación en tiempo real
-document.getElementById('name').addEventListener('input', function() {
-    if (this.value.trim().length >= 2) {
-        clearError('name');
-    }
-});
-
-document.getElementById('email').addEventListener('input', function() {
-    if (isValidEmail(this.value)) {
-        clearError('email');
-    }
-});
-
-document.getElementById('message').addEventListener('input', function() {
-    if (this.value.trim().length >= 10) {
-        clearError('message');
-    }
-});
-
-// Envío del formulario
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Obtener valores del formulario
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    let hasErrors = false;
-
-    // Validar nombre
-    if (name.length < 2) {
-        showError('name', 'El nombre debe tener al menos 2 caracteres');
-        hasErrors = true;
-    } else {
-        clearError('name');
-    }
-
-    // Validar email
-    if (!isValidEmail(email)) {
-        showError('email', 'Por favor, introduce un email válido');
-        hasErrors = true;
-    } else {
-        clearError('email');
-    }
-
-    // Validar mensaje
-    if (message.length < 10) {
-        showError('message', 'El mensaje debe tener al menos 10 caracteres');
-        hasErrors = true;
-    } else {
-        clearError('message');
-    }
-
-    // Si no hay errores, simular envío
-    if (!hasErrors) {
-        // Aquí normalmente enviarías los datos a tu servidor
-        console.log('Formulario enviado:', { name, email, subject, message });
-        
-        // Mostrar mensaje de éxito
-        successMessage.style.display = 'block';
-        contactForm.reset();
-        
-        // Scroll hasta el mensaje de éxito
-        successMessage.scrollIntoView({ behavior: 'smooth' });
-        
-        // Ocultar mensaje después de 5 segundos
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 5000);
-    }
-});
-
-// ===== EFECTO PARALLAX EN HERO =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const rate = scrolled * -0.5;
-    
-    if (hero) {
-        hero.style.transform = `translateY(${rate}px)`;
-    }
+document.querySelectorAll('.fade-in').forEach(elemento => {
+    observador.observe(elemento);
 });
 
 // ===== CAMBIAR HEADER AL HACER SCROLL =====
-let lastScrollTop = 0;
-const header = document.querySelector('header');
+const cabecera = document.querySelector('header');
 
 window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Cambiar opacidad del header
-    if (scrollTop > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
+    const desplazamientoActual = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (desplazamientoActual > 100) {
+        cabecera.style.background = 'rgba(255, 255, 255, 0.95)';
+        cabecera.style.backdropFilter = 'blur(10px)';
     } else {
-        header.style.background = '#ffffff';
-        header.style.backdropFilter = 'none';
+        cabecera.style.background = '#ffffff';
+        cabecera.style.backdropFilter = 'none';
     }
-    
-    lastScrollTop = scrollTop;
 });
 
-// ===== TYPING EFFECT EN EL HERO (OPCIONAL) =====
-function typeWriter(element, text, speed = 50) {
+// ===== TYPING EFFECT EN EL HERO =====
+function efectoEscritura(elemento, texto, velocidad = 50) {
     let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+    elemento.innerHTML = '';
+
+    function escribir() {
+        if (i < texto.length) {
+            elemento.innerHTML += texto.charAt(i);
             i++;
-            setTimeout(type, speed);
+            setTimeout(escribir, velocidad);
         }
     }
-    type();
+    escribir();
 }
 
-// Activar typing effect cuando la página carga
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 80);
+    const tituloHero = document.querySelector('.hero h1');
+    if (tituloHero) {
+        const textoOriginal = tituloHero.textContent;
+        efectoEscritura(tituloHero, textoOriginal, 80);
     }
 });
 
-// ===== CONTADOR DE PROYECTOS (ANIMACIÓN) =====
-function animateCounter(element, start, end, duration) {
-    let startTime = null;
-    
-    function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        const current = Math.floor(progress * (end - start) + start);
-        element.textContent = current;
-        
-        if (progress < 1) {
-            requestAnimationFrame(step);
-        }
-    }
-    requestAnimationFrame(step);
-}
-
-// ===== LOADER INICIAL (OPCIONAL) =====
+// ===== FADE IN AL CARGAR =====
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     setTimeout(() => {
@@ -224,25 +91,10 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// ===== MODO DARK/LIGHT (FUNCIONALIDAD EXTRA) =====
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-    const isDark = document.body.classList.contains('dark-theme');
-    localStorage.setItem('darkTheme', isDark);
-}
-
-// Cargar tema guardado
-window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('darkTheme');
-    if (savedTheme === 'true') {
-        document.body.classList.add('dark-theme');
-    }
-});
-
-// ===== BOTÓN DE SCROLL TO TOP =====
-const scrollTopBtn = document.createElement('button');
-scrollTopBtn.innerHTML = '↑';
-scrollTopBtn.style.cssText = `
+// ===== BOTÓN SCROLL TO TOP =====
+const botonSubir = document.createElement('button');
+botonSubir.innerHTML = '↑';
+botonSubir.style.cssText = `
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -259,16 +111,16 @@ scrollTopBtn.style.cssText = `
     transition: all 0.3s ease;
 `;
 
-scrollTopBtn.addEventListener('click', () => {
+botonSubir.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-document.body.appendChild(scrollTopBtn);
+document.body.appendChild(botonSubir);
 
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
-        scrollTopBtn.style.display = 'block';
+        botonSubir.style.display = 'block';
     } else {
-        scrollTopBtn.style.display = 'none';
+        botonSubir.style.display = 'none';
     }
 });
