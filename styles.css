@@ -232,6 +232,7 @@ nav {
 /* ===== SECCIONES GENERALES ===== */
 section {
     padding: 80px 2rem;
+    scroll-margin-top: 70px;
 }
 
 .container {
