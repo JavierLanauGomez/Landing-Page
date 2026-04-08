@@ -46,115 +46,6 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// ===== VALIDACIÓN Y ENVÍO DE FORMULARIO =====
-const contactForm = document.getElementById('contact-form');
-const successMessage = document.getElementById('success-message');
-
-// Función para mostrar errores
-function showError(fieldId, message) {
-    const errorElement = document.getElementById(fieldId + '-error');
-    errorElement.textContent = message;
-    document.getElementById(fieldId).style.borderColor = '#ef4444';
-}
-
-// Función para limpiar errores
-function clearError(fieldId) {
-    const errorElement = document.getElementById(fieldId + '-error');
-    errorElement.textContent = '';
-    document.getElementById(fieldId).style.borderColor = '#e5e7eb';
-}
-
-// Función para validar email
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Validación en tiempo real
-document.getElementById('name').addEventListener('input', function() {
-    if (this.value.trim().length >= 2) {
-        clearError('name');
-    }
-});
-
-document.getElementById('email').addEventListener('input', function() {
-    if (isValidEmail(this.value)) {
-        clearError('email');
-    }
-});
-
-document.getElementById('message').addEventListener('input', function() {
-    if (this.value.trim().length >= 10) {
-        clearError('message');
-    }
-});
-
-// Envío del formulario
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Obtener valores del formulario
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    let hasErrors = false;
-
-    // Validar nombre
-    if (name.length < 2) {
-        showError('name', 'El nombre debe tener al menos 2 caracteres');
-        hasErrors = true;
-    } else {
-        clearError('name');
-    }
-
-    // Validar email
-    if (!isValidEmail(email)) {
-        showError('email', 'Por favor, introduce un email válido');
-        hasErrors = true;
-    } else {
-        clearError('email');
-    }
-
-    // Validar mensaje
-    if (message.length < 10) {
-        showError('message', 'El mensaje debe tener al menos 10 caracteres');
-        hasErrors = true;
-    } else {
-        clearError('message');
-    }
-
-    // Si no hay errores, simular envío
-    if (!hasErrors) {
-        // Aquí normalmente enviarías los datos a tu servidor
-        console.log('Formulario enviado:', { name, email, subject, message });
-        
-        // Mostrar mensaje de éxito
-        successMessage.style.display = 'block';
-        contactForm.reset();
-        
-        // Scroll hasta el mensaje de éxito
-        successMessage.scrollIntoView({ behavior: 'smooth' });
-        
-        // Ocultar mensaje después de 5 segundos
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 5000);
-    }
-});
-
-// ===== EFECTO PARALLAX EN HERO =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const rate = scrolled * -0.5;
-    
-    if (hero) {
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
-
 // ===== CAMBIAR HEADER AL HACER SCROLL =====
 let lastScrollTop = 0;
 const header = document.querySelector('header');
@@ -174,29 +65,40 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop;
 });
 
-// ===== TYPING EFFECT EN EL HERO (OPCIONAL) =====
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
+// ===== TYPING EFFECT EN EL HERO =====
+const heroTyped = document.getElementById('hero-typed');
+if (heroTyped) {
+    const frases = [
+        'Desarrollador Full Stack',
+        'Backend Developer Java & Python',
+        'Apasionado del código'
+    ];
+    let fraseIndex = 0;
+    let charIndex = 0;
+    let borrando = false;
 
-// Activar typing effect cuando la página carga
-window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 80);
+    function typeLoop() {
+        const frase = frases[fraseIndex];
+        if (!borrando) {
+            heroTyped.textContent = frase.slice(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === frase.length) {
+                borrando = true;
+                setTimeout(typeLoop, 2000);
+                return;
+            }
+        } else {
+            heroTyped.textContent = frase.slice(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+                borrando = false;
+                fraseIndex = (fraseIndex + 1) % frases.length;
+            }
+        }
+        setTimeout(typeLoop, borrando ? 40 : 80);
     }
-});
+    typeLoop();
+}
 
 // ===== CONTADOR DE PROYECTOS (ANIMACIÓN) =====
 function animateCounter(element, start, end, duration) {
