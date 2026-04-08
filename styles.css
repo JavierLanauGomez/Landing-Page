@@ -232,7 +232,11 @@ nav {
 /* ===== SECCIONES GENERALES ===== */
 section {
     padding: 40px 2rem 80px;
-    scroll-margin-top: 70px;
+    scroll-margin-top: 80px;
+}
+
+.projects {
+    padding-bottom: 120px;
 }
 
 .container {
@@ -319,6 +323,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: stretch;
 }
 
 .project-card {
@@ -657,6 +662,18 @@ footer {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px) and (min-width: 601px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
