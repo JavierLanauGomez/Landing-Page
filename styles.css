@@ -228,12 +228,21 @@ nav {
 
 /* ===== SECCIONES GENERALES ===== */
 section {
-    padding: 40px 2rem 80px;
+    padding: 60px 2rem 80px;
     scroll-margin-top: 80px;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+}
+
+section .container {
+    width: 100%;
 }
 
 .projects {
-    padding-bottom: 120px;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .container {
