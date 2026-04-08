@@ -14,14 +14,13 @@ navLinks.addEventListener('click', (e) => {
 });
 
 // ===== SCROLL SUAVE PARA NAVEGACIÓN =====
-const NAVBAR_HEIGHT = 80;
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const top = target.getBoundingClientRect().top + window.pageYOffset - NAVBAR_HEIGHT;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
             window.scrollTo({ top, behavior: 'smooth' });
         }
     });

@@ -12,10 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
+/* Scroll gestionado por JavaScript */
 
 /* Variables CSS para colores consistentes */
 :root {
