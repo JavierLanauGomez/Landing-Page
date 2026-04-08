@@ -16,7 +16,7 @@ body {
 
 /* Variables CSS para colores consistentes */
 :root {
-    
+    --primary-color: #2563eb;
     --primary-dark: #1e40af;
     --secondary-color: #1f2937;
     --accent-color: #10b981;
@@ -228,21 +228,17 @@ nav {
 
 /* ===== SECCIONES GENERALES ===== */
 section {
-    padding: 60px 2rem 80px;
+    padding: 60px 2rem;
     scroll-margin-top: 80px;
     min-height: calc(100vh - 70px);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 section .container {
     width: 100%;
-}
-
-.projects {
-    align-items: flex-start;
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 .container {
@@ -258,10 +254,10 @@ section .container {
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
     color: #6b7280;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -348,17 +344,17 @@ section .container {
 }
 
 .project-image {
-    height: 200px;
+    height: 120px;
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .project-content {
-    padding: 1.5rem;
+    padding: 1rem 1.2rem;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -737,7 +733,8 @@ footer {
     }
 
     section {
-        padding: 30px 1rem 60px;
+        padding: 40px 1rem;
+        min-height: calc(100vh - 60px);
     }
 
     .section-title {
