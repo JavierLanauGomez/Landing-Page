@@ -231,7 +231,7 @@ nav {
 
 /* ===== SECCIONES GENERALES ===== */
 section {
-    padding: 80px 2rem;
+    padding: 40px 2rem 80px;
     scroll-margin-top: 70px;
 }
 
@@ -707,7 +707,7 @@ footer {
     }
 
     section {
-        padding: 60px 1rem;
+        padding: 30px 1rem 60px;
     }
 
     .section-title {
