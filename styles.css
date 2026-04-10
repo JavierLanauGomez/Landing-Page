@@ -323,8 +323,8 @@ section .container {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     align-items: stretch;
 }
 
@@ -344,13 +344,13 @@ section .container {
 }
 
 .project-image {
-    height: 120px;
+    height: 90px;
     background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .project-content {
@@ -361,7 +361,7 @@ section .container {
 }
 
 .project-content h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
 }
@@ -664,7 +664,7 @@ footer {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 900px) and (min-width: 601px) {
+@media (max-width: 1100px) and (min-width: 601px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
