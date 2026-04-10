@@ -321,11 +321,12 @@ section .container {
 }
 
 
-/* La sección proyectos no centra verticalmente — deja que el contenido fluya */
+/* La sección proyectos ocupa la pantalla completa pero no centra — evita que asome la sección siguiente */
 .projects {
-    min-height: auto;
+    min-height: 100vh;
     justify-content: flex-start;
     padding: 30px 2rem 40px;
+    overflow: hidden;
 }
 
 .projects-grid {
