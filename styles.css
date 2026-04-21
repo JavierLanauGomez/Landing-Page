@@ -280,41 +280,34 @@ header.scrolled {
     flex-wrap: wrap;
 }
 
-/* Avatar */
+/* Foto */
 .hero-visual {
     position: relative;
-    height: 480px;
+    height: 520px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
-.hero-avatar {
-    width: 340px;
-    height: 420px;
-    border-radius: 200px 200px 20px 20px;
-    background: radial-gradient(circle at 50% 40%, #2a2a2a 0%, #0a0a0a 70%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+.hero-photo {
+    max-height: 520px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 40px 80px -30px rgba(0,0,0,0.35);
+    z-index: 2;
+    animation: photoIn 1s ease .1s both;
 }
-.avatar-initials {
-    font-family: var(--font-display);
-    font-size: 120px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #fff;
-    opacity: 0.92;
+@keyframes photoIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 .hero-hello-badge {
     position: absolute;
-    left: 8%;
-    bottom: 22%;
-    width: 100px;
-    height: 100px;
+    left: 4%;
+    bottom: 18%;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     background: var(--ink);
     color: #fff;
@@ -325,14 +318,16 @@ header.scrolled {
     font-size: 28px;
     font-weight: 600;
     box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4);
+    z-index: 3;
 }
 .hero-squiggle {
     position: absolute;
-    right: 2%;
-    top: 18%;
+    right: 4%;
+    top: 14%;
     font-size: 34px;
     color: var(--ink);
     transform: rotate(20deg);
+    z-index: 3;
 }
 
 /* Strip skills */
@@ -1037,9 +1032,8 @@ footer {
         min-height: auto;
         gap: 20px;
     }
-    .hero-visual { order: -1; height: 320px; }
-    .hero-avatar { width: 230px; height: 290px; }
-    .avatar-initials { font-size: 90px; }
+    .hero-visual { order: -1; height: 340px; align-items: flex-end; }
+    .hero-photo { max-height: 340px; }
     .hero-hello-badge { width: 80px; height: 80px; font-size: 22px; }
     .hero-gradient { width: 400px; height: 400px; top: 40px; }
 
