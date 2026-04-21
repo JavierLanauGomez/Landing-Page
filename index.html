@@ -3,267 +3,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Desarrollador de aplicaciones  especializado en Java y Python. Graduado en Desarrollo de Aplicaciones Multiplataforma (DAM) con experiencia web y aplicaciones de escritorio. Disponible para proyectos freelance y colaboraciones.">
-    <meta name="keywords" content="desarrollador , Java, JavaScript, DAM, desarrollo web">
-    <title>Javier Lanau  - Desarrollador Full Stack | Portfolio</title>
+    <meta name="description" content="Portfolio de Javier Lanau, estudiante de 2º de DAM con experiencia en Java, Python, desarrollo web, APIs y bases de datos. Disponible para prácticas y nuevas oportunidades.">
+    <meta name="keywords" content="javier lanau, desarrollador junior, DAM, java, python, desarrollo web, full stack junior, portfolio programador">
+    <title>Javier Lanau | Desarrollador Junior Web y Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ===== HEADER CON NAVEGACIÓN ===== -->
+    <!-- ===== HEADER ===== -->
     <header>
-        <nav>
-            <a href="#home" class="logo">Javier Lanau</a>
+        <nav class="nav">
+            <a href="#home" class="logo">it's me<span class="logo-underline"></span></a>
+
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#services">Skills</a></li>
+                <li>
+                    <a href="#projects">
+                        <span class="nav-title">Proyectos</span>
+                        <span class="nav-sub">Los trabajos que he hecho</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <span class="nav-title">Sobre mí</span>
+                        <span class="nav-sub">Quién soy y qué hago</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <span class="nav-title">Contacto</span>
+                        <span class="nav-sub">j.lanau.gomez@gmail.com</span>
+                    </a>
+                </li>
             </ul>
-            <div class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="home">
-        <div class="hero-badges">
-            <span class="hero-badge" style="--delay: 0.3s">Java</span>
-            <span class="hero-badge" style="--delay: 0.5s">Python</span>
-             <span class="hero-badge" style="--delay: 0.5s">Html</span>
-             <span class="hero-badge" style="--delay: 0.5s">Css</span>
-              <span class="hero-badge" style="--delay: 0.5s">JavaScript</span>
-            <span class="hero-badge" style="--delay: 0.9s">MySQL</span>
-            <span class="hero-badge" style="--delay: 1.1s">Git</span>
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="hero-decor-lines" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+            <div class="hero-text">
+                <span class="hero-wave" aria-hidden="true">👋</span>
+                <h1 class="hero-title">
+                    <span class="hero-hello">Hola!</span>
+                    <span class="hero-name">Soy Javier Lanau</span>
+                </h1>
+
+                <div class="hero-role">
+                    <span class="hero-role-line"></span>
+                    <span class="hero-role-text">Desarrollador Junior Full-Stack</span>
+                    <span class="hero-role-star" aria-hidden="true">✦</span>
+                </div>
+
+                <p class="hero-desc">
+                    Estudiante de <strong>2º de DAM</strong> en Madrid, con experiencia en Java, Python, bases de datos y desarrollo web. Construyo proyectos útiles, limpios y escalables mientras sigo creciendo como desarrollador.
+                </p>
+
+                <ul class="hero-checks">
+                    <li><span class="check">✓</span> Base técnica sólida en software y web</li>
+                    <li><span class="check">✓</span> Experiencia real en proyectos colaborativos</li>
+                    <li><span class="check">✓</span> Código limpio y buenas prácticas</li>
+                </ul>
+
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-dark">Hablemos</a>
+                    <a href="#projects" class="btn btn-ghost">
+                        Ver proyectos <span class="btn-arrow">↓</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-avatar">
+                    <span class="avatar-initials">JL</span>
+                </div>
+                <div class="hero-hello-badge" aria-hidden="true">
+                    <span>Hello</span>
+                </div>
+                <span class="hero-squiggle" aria-hidden="true">〰</span>
+            </div>
         </div>
-        <div class="hero-content">
-            <h1>Desarrollador Junior Apasionado</h1>
-            <p>Graduado en DAM con sólidos conocimientos en Java y JavaScript. Listo para aportar valor a tu equipo y crecer profesionalmente.</p>
-            <a href="#contact" class="cta-button">Solicitar Presupuesto</a>
+
+        <!-- Strip de habilidades -->
+        <div class="skills-strip">
+            <div class="skills-track">
+                <span>JAVA</span><span class="dot">✦</span>
+                <span>PYTHON</span><span class="dot">✦</span>
+                <span>DESARROLLO WEB</span><span class="dot">✦</span>
+                <span>APIS REST</span><span class="dot">✦</span>
+                <span>MYSQL</span><span class="dot">✦</span>
+                <span>JAVA</span><span class="dot">✦</span>
+                <span>PYTHON</span><span class="dot">✦</span>
+                <span>DESARROLLO WEB</span><span class="dot">✦</span>
+                <span>APIS REST</span><span class="dot">✦</span>
+                <span>MYSQL</span><span class="dot">✦</span>
+            </div>
+        </div>
+
+        <!-- Redes sociales top -->
+        <div class="hero-social">
+            <div class="hero-social-left">
+                <a href="https://github.com/JavierLanauGomez" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/javier-lanau-gomez" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="tel:+34635500186">+34 635 500 186</a>
+            </div>
+            <div class="hero-social-right">
+                <span class="mail-icon">✉</span>
+                <a href="mailto:j.lanau.gomez@gmail.com">J.LANAU.GOMEZ@GMAIL.COM</a>
+            </div>
         </div>
     </section>
 
     <!-- ===== SOBRE MÍ ===== -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="profile-img">AM</div>
-                </div>
+            <div class="section-tag">· SOBRE MÍ</div>
+            <div class="about-grid">
+                <h2 class="section-title">
+                    Un perfil junior<br>
+                    con <em>base sólida</em> <span class="star" aria-hidden="true">✦</span>
+                </h2>
                 <div class="about-text">
-                    <h3>¡Hola! Soy Javier Lanau</h3>
-                    <p>Desarrollador de aplicaciones junior con formación completa en <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>. Durante mis estudios he trabajado con Java, Android Studio, bases de datos y desarrollo web.</p>
-                    <p>Actualmente estoy especializándome en <strong>JavaScript moderno</strong> y sus frameworks para ampliar mis habilidades en desarrollo frontend y fullstack. Me caracterizo por ser una persona responsable, con gran capacidad de aprendizaje y motivación para enfrentar nuevos retos técnicos.</p>
-                    
-                    
-                    <div class="tech-stack">
-                        <span class="tech-item">Java</span>
-                        <span class="tech-item">JavaScript</span>
-                        <span class="tech-item">Android Studio</span>
-                        <span class="tech-item">HTML5 & CSS3</span>
-                        <span class="tech-item">MySQL</span>
-                        <span class="tech-item">Git</span>
-                        <span class="tech-item">React (aprendiendo)</span>
+                    <p>
+                        Soy un desarrollador junior en formación dentro del ciclo de <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>, con base técnica en programación, bases de datos y desarrollo web.
+                    </p>
+                    <p>
+                        Durante mi etapa formativa he trabajado con <strong>Java, Python, Android Studio, MySQL</strong> y tecnologías frontend, participando en proyectos propios y en colaboraciones reales como 3XA y 3XATV.
+                    </p>
+                    <p>
+                        Destaco por la responsabilidad, la capacidad de aprendizaje y el interés por seguir evolucionando hacia un perfil full-stack moderno.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ÁREAS / OFERTA ===== -->
+    <section class="offering" id="services">
+        <div class="container">
+            <div class="offering-head">
+                <div>
+                    <div class="section-tag">· LO QUE APORTO</div>
+                    <h2 class="section-title big">
+                        ÁREAS EN LAS QUE<br>PUEDO APORTAR
+                    </h2>
+                </div>
+                <div class="offering-intro">
+                    <p>Áreas técnicas donde me muevo con soltura y en las que puedo integrarme desde el primer día en un equipo.</p>
+                    <a href="#projects" class="btn btn-dark small">Ver proyectos</a>
+                </div>
+            </div>
+
+            <div class="offering-rail">
+                <span class="offering-scroll-label">SCROLL DOWN</span>
+                <span class="offering-line"></span>
+                <span class="offering-arrow">↓</span>
+            </div>
+
+            <div class="offering-grid">
+                <article class="offer-card offer-card-dark fade-in">
+                    <div class="offer-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 14h24M12 24h18M12 34h24"/>
+                            <circle cx="38" cy="24" r="3"/>
+                        </svg>
+                    </div>
+                    <h3>JAVA &<br>BACKEND</h3>
+                    <a href="#projects" class="offer-link">LEER MÁS <span>→</span></a>
+                </article>
+
+                <article class="offer-card fade-in">
+                    <div class="offer-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="6" y="10" width="36" height="24" rx="2"/>
+                            <path d="M14 38h20M24 34v4"/>
+                            <path d="M14 18l-4 4 4 4M34 18l4 4-4 4M28 16l-8 12"/>
+                        </svg>
+                    </div>
+                    <h3>DESARROLLO<br>WEB</h3>
+                    <a href="#projects" class="offer-link">LEER MÁS <span>→</span></a>
+                </article>
+
+                <article class="offer-card fade-in">
+                    <div class="offer-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <ellipse cx="24" cy="12" rx="14" ry="4"/>
+                            <path d="M10 12v12c0 2.2 6.3 4 14 4s14-1.8 14-4V12"/>
+                            <path d="M10 24v12c0 2.2 6.3 4 14 4s14-1.8 14-4V24"/>
+                        </svg>
+                    </div>
+                    <h3>BASES DE DATOS<br>& APIS</h3>
+                    <a href="#projects" class="offer-link">LEER MÁS <span>→</span></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCIA ===== -->
+    <section class="experience">
+        <div class="container">
+            <div class="exp-head">
+                <span class="exp-star" aria-hidden="true">✦</span>
+                <h2 class="section-title centered">EXPERIENCIA</h2>
+                <p class="exp-intro">Colaboraciones, formación y proyectos en los que estoy aportando actualmente.</p>
+                <span class="exp-lines" aria-hidden="true"></span>
+            </div>
+
+            <ul class="exp-list">
+                <li class="exp-item exp-item-dark fade-in">
+                    <span class="exp-num">1</span>
+                    <div class="exp-body">
+                        <h3>Colaborador — 3XA</h3>
+                        <p>Plataforma educativa · learn.3xa.es</p>
+                    </div>
+                    <span class="exp-duration">EN DESARROLLO</span>
+                </li>
+                <li class="exp-item fade-in">
+                    <span class="exp-num">2</span>
+                    <div class="exp-body">
+                        <h3>Colaborador — 3XATV</h3>
+                        <p>Plataforma audiovisual · tv.3xa.es</p>
+                    </div>
+                    <span class="exp-duration">EN DESARROLLO</span>
+                </li>
+                <li class="exp-item fade-in">
+                    <span class="exp-num">3</span>
+                    <div class="exp-body">
+                        <h3>Proyecto personal — TiendaAero</h3>
+                        <p>Full-stack · FastAPI + MySQL + JWT</p>
+                    </div>
+                    <span class="exp-duration">EN DESARROLLO</span>
+                </li>
+                <li class="exp-item fade-in">
+                    <span class="exp-num">4</span>
+                    <div class="exp-body">
+                        <h3>Estudiante de DAM</h3>
+                        <p>Desarrollo de Aplicaciones Multiplataforma · 2º año</p>
+                    </div>
+                    <span class="exp-duration">EN CURSO</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== PROYECTOS / CASE STUDY ===== -->
+    <section class="case-study" id="projects">
+        <div class="container">
+            <div class="cs-head">
+                <span class="cs-dots" aria-hidden="true"></span>
+                <h2 class="section-title centered">PROYECTOS</h2>
+                <p class="cs-intro">Una selección de proyectos propios y colaborativos que resumen mi perfil como desarrollador junior.</p>
+            </div>
+
+            <!-- Proyecto destacado: TiendaAero -->
+            <div class="cs-row cs-featured fade-in">
+                <div class="cs-preview cs-preview-dark">
+                    <div class="cs-mock">
+                        <div class="cs-mock-bar">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="cs-mock-body">
+                            <div class="cs-mock-line long"></div>
+                            <div class="cs-mock-line med"></div>
+                            <div class="cs-mock-line short"></div>
+                            <div class="cs-mock-cards">
+                                <div class="cs-mock-card"></div>
+                                <div class="cs-mock-card"></div>
+                                <div class="cs-mock-card"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cs-info">
+                    <span class="cs-tag">PROYECTO DESTACADO</span>
+                    <h3>TiendaAero — sistema full-stack para tienda de aeromodelismo.</h3>
+                    <p>API REST en Python/FastAPI, base de datos MySQL, autenticación JWT y frontend en HTML, CSS y JavaScript. Arquitectura completa con backend, datos e interfaz.</p>
+                    <div class="cs-tech">
+                        <span>Python</span><span>FastAPI</span><span>MySQL</span><span>JWT</span><span>REST</span>
+                    </div>
+                    <a href="https://github.com/JavierLanauGomez/TiendaAero" target="_blank" rel="noopener" class="cs-link">Ver en GitHub <span>↗</span></a>
+                </div>
+            </div>
+
+            <!-- 3XA + 3XATV: dos columnas -->
+            <div class="cs-two-col">
+                <article class="cs-row cs-small fade-in">
+                    <div class="cs-info">
+                        <span class="cs-tag">COLABORACIÓN</span>
+                        <h3>3XA — plataforma educativa.</h3>
+                        <p>Participo en el desarrollo y mantenimiento de la plataforma, trabajando en un entorno real con estructura profesional.</p>
+                        <div class="cs-links-row">
+                            <a href="https://learn.3xa.es/" target="_blank" rel="noopener" class="cs-link">Ver web <span>↗</span></a>
+                            <a href="https://github.com/valfiguer/3XA" target="_blank" rel="noopener" class="cs-link muted">GitHub <span>↗</span></a>
+                        </div>
+                    </div>
+                    <div class="cs-preview">
+                        <div class="cs-mock light">
+                            <div class="cs-mock-bar light">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="cs-mock-body">
+                                <div class="cs-mock-grid">
+                                    <div></div><div></div><div></div><div></div>
+                                </div>
+                                <div class="cs-mock-line med"></div>
+                                <div class="cs-mock-line short"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cs-row cs-small fade-in">
+                    <div class="cs-preview">
+                        <div class="cs-mock light">
+                            <div class="cs-mock-bar light">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="cs-mock-body">
+                                <div class="cs-mock-video"></div>
+                                <div class="cs-mock-row">
+                                    <div class="cs-mock-thumb"></div>
+                                    <div class="cs-mock-thumb"></div>
+                                    <div class="cs-mock-thumb"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cs-info">
+                        <span class="cs-tag">COLABORACIÓN</span>
+                        <h3>3XATV — plataforma audiovisual.</h3>
+                        <p>Contribuyo al desarrollo y mantenimiento de la plataforma, colaborando en mejoras continuas y nuevas funcionalidades.</p>
+                        <div class="cs-links-row">
+                            <a href="https://tv.3xa.es/" target="_blank" rel="noopener" class="cs-link">Ver web <span>↗</span></a>
+                            <a href="https://github.com/valfiguer/tv" target="_blank" rel="noopener" class="cs-link muted">GitHub <span>↗</span></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Landing personal -->
+            <div class="cs-row cs-reverse fade-in">
+                <div class="cs-info">
+                    <span class="cs-tag">PROYECTO PROPIO</span>
+                    <h3>Landing Page Personal.</h3>
+                    <p>Portfolio desarrollado desde cero con diseño responsive, animaciones CSS y microinteracciones cuidadas. Primer paso de mi marca personal como desarrollador.</p>
+                    <div class="cs-tech">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span>
+                    </div>
+                    <a href="https://github.com/JavierLanauGomez/Landing-Page" target="_blank" rel="noopener" class="cs-link">Ver en GitHub <span>↗</span></a>
+                </div>
+                <div class="cs-preview">
+                    <div class="cs-mock light">
+                        <div class="cs-mock-bar light">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="cs-mock-body">
+                            <div class="cs-mock-hero"></div>
+                            <div class="cs-mock-line med"></div>
+                            <div class="cs-mock-line short"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== PROYECTOS / PORTFOLIO ===== -->
-    <section class="projects" id="projects">
+    <!-- ===== STACK ===== -->
+    <section class="stack">
         <div class="container">
-            <h2 class="section-title">Mis Proyectos</h2>
-            <p class="section-subtitle">Proyectos propios y colaboraciones en los que estoy participando</p>
+            <div class="section-tag centered">· STACK</div>
+            <h2 class="section-title centered">Tecnologías con las que trabajo</h2>
 
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">🌐</div>
-                    <div class="project-content">
-                        <h3>Landing Page Personal</h3>
-                        <p>Portfolio personal desarrollado desde cero con diseño responsive, animaciones CSS, gradiente dinámico y efecto typing en el hero.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML5</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Responsive</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/JavierLanauGomez/Landing-Page" target="_blank" class="project-link">Código GitHub</a>
-                        </div>
-                    </div>
+            <div class="stack-grid">
+                <div class="stack-col fade-in">
+                    <h4>Lenguajes</h4>
+                    <ul>
+                        <li>Java</li><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li>
+                    </ul>
                 </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">🚀</div>
-                    <div class="project-content">
-                        <h3>3XA</h3>
-                        <p>Proyecto en colaboración activa. Contribuyendo al desarrollo y mantenimiento de la plataforma.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">En desarrollo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://learn.3xa.es/" target="_blank" class="project-link">Ver web</a>
-                            <a href="https://github.com/valfiguer/3XA" target="_blank" class="project-link">Ver en GitHub</a>
-                        </div>
-                    </div>
+                <div class="stack-col fade-in">
+                    <h4>Backend &amp; datos</h4>
+                    <ul>
+                        <li>FastAPI</li><li>MySQL</li><li>SQLite</li><li>JWT</li><li>REST API</li>
+                    </ul>
                 </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">📺</div>
-                    <div class="project-content">
-                        <h3>3XATV</h3>
-                        <p>Proyecto en colaboración activa. Contribuyendo al desarrollo y mantenimiento de la plataforma.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">En desarrollo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://tv.3xa.es/" target="_blank" class="project-link">Ver web</a>
-                            <a href="https://github.com/valfiguer/tv" target="_blank" class="project-link">Ver en GitHub</a>
-                        </div>
-                    </div>
+                <div class="stack-col fade-in">
+                    <h4>Frontend</h4>
+                    <ul>
+                        <li>HTML5 / CSS3</li><li>JavaScript (DOM)</li><li>Responsive design</li><li>Consumo de APIs</li>
+                    </ul>
                 </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-image">🛒</div>
-                    <div class="project-content">
-                        <h3>TiendaAero</h3>
-                        <p>Sistema de gestión para tienda de aeromodelismo. API REST desarrollada con Python y FastAPI, base de datos MySQL, autenticación JWT y frontend en HTML/CSS/JavaScript.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">REST API</span>
-                            <span class="tech-tag">En desarrollo</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/JavierLanauGomez/TiendaAero" target="_blank" class="project-link">Ver en GitHub</a>
-                        </div>
-                    </div>
+                <div class="stack-col fade-in">
+                    <h4>Herramientas</h4>
+                    <ul>
+                        <li>Git</li><li>GitHub</li><li>Android Studio</li>
+                    </ul>
+                </div>
+                <div class="stack-col stack-col-dark fade-in">
+                    <h4>Aprendiendo ahora</h4>
+                    <ul>
+                        <li>React</li><li>Enfoque full-stack moderno</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SERVICIOS / HABILIDADES ===== -->
-    <section class="services" id="services">
+    <!-- ===== CONTACTO ===== -->
+    <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Servicios que Ofrezco</h2>
-            <p class="section-subtitle">Como desarrollador junior, estos son los servicios en los que me especializo</p>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">☕</div>
-                    <h3>Java</h3>
-                    <p>Desarrollo de aplicaciones de escritorio y backend con Java. Programación orientada a objetos, estructuras de datos y acceso a bases de datos.</p>
+            <h2 class="contact-title">
+                <span class="contact-soft">¿Hablamos?</span> Cuéntame<br>
+                <span class="contact-arrow">→</span> sobre tu proyecto
+            </h2>
+            <p class="contact-sub">Si quieres hablar sobre una oportunidad, una colaboración o un proyecto, estaré encantado de escucharla.</p>
+
+            <form class="contact-form" action="mailto:j.lanau.gomez@gmail.com" method="post" enctype="text/plain">
+                <div class="form-row">
+                    <label>
+                        <span>Nombre.*</span>
+                        <input type="text" name="nombre" placeholder="Hola..." required>
+                    </label>
+                    <label>
+                        <span>Email.*</span>
+                        <input type="email" name="email" placeholder="Dónde puedo responderte" required>
+                    </label>
+                </div>
+                <label class="form-full">
+                    <span>Empresa o web</span>
+                    <input type="text" name="empresa" placeholder="Tu empresa o proyecto">
+                </label>
+
+                <div class="form-chips">
+                    <span class="form-chips-label">¿Qué tienes en mente?*</span>
+                    <div class="form-chips-list">
+                        <label class="chip"><input type="checkbox" name="tema" value="Prácticas"><span>Prácticas</span></label>
+                        <label class="chip"><input type="checkbox" name="tema" value="Colaboración"><span>Colaboración</span></label>
+                        <label class="chip"><input type="checkbox" name="tema" value="Proyecto freelance"><span>Proyecto freelance</span></label>
+                        <label class="chip"><input type="checkbox" name="tema" value="Desarrollo web"><span>Desarrollo web</span></label>
+                        <label class="chip"><input type="checkbox" name="tema" value="Backend / API"><span>Backend / API</span></label>
+                        <label class="chip"><input type="checkbox" name="tema" value="Otro"><span>Otro</span></label>
+                    </div>
                 </div>
 
-                <div class="service-card fade-in">
-                    <div class="service-icon">🐍</div>
-                    <h3>Python</h3>
-                    <p>Desarrollo de scripts, automatización y aplicaciones con Python. Manejo de datos, APIs REST y programación de servicios y procesos.</p>
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-dark">Enviar <span class="btn-arrow">↗</span></button>
+                    <span class="form-note">Te responderé lo antes posible.</span>
                 </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">🌐</div>
-                    <h3>Desarrollo Web</h3>
-                    <p>Desarrollo de sitios web responsivos y modernos con HTML5, CSS3 y JavaScript. Landing pages, sitios corporativos y aplicaciones web interactivas.</p>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">💾</div>
-                    <h3>Bases de Datos</h3>
-                    <p>Diseño e implementación de bases de datos relacionales con MySQL y SQLite. Optimización de consultas y modelado de datos eficiente.</p>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔧</div>
-                    <h3>Mantenimiento y Soporte</h3>
-                    <p>Mantenimiento de aplicaciones existentes, corrección de errores, mejoras de rendimiento y implementación de nuevas funcionalidades.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== BENEFICIOS / DIFERENCIADORES ===== -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">¿Por Qué Contratarme?</h2>
-            <p class="section-subtitle">Ventajas de trabajar con un desarrollador junior comprometido y en constante aprendizaje</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Aprendizaje Rápido</h3>
-                    <p>Capacidad demostrada para adquirir nuevas tecnologías y adaptarme a diferentes entornos de desarrollo.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Enfoque en Resultados</h3>
-                    <p>Orientado a cumplir objetivos y entregar proyectos de calidad en los tiempos establecidos.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">🤝</div>
-                    <h3>Comunicación Clara</h3>
-                    <p>Mantengo comunicación constante durante el desarrollo, con reportes regulares de progreso.</p>
-                </div>
-
-                <div class="benefit-item fade-in">
-                    <div class="benefit-icon">📚</div>
-                    <h3>Actualización Continua</h3>
-                    <p>Siempre al día con las últimas tendencias y mejores prácticas en desarrollo de software.</p>
-                </div>
-
-            </div>
+            </form>
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="mailto:j.lanau.gomez@gmail.com" title="Email">✉️</a>
-                <a href="https://linkedin.com/in/alex-martinez-dev" title="LinkedIn" target="_blank">🔗</a>
-                <a href="https://github.com/alexmartinez-dev" title="GitHub" target="_blank">⚡</a>
-                <a href="https://twitter.com/alexmartinez_dev" title="Twitter" target="_blank">🐦</a>
+        <div class="container footer-inner">
+            <span class="footer-x" aria-hidden="true">✕</span>
+            <div class="footer-links">
+                <a href="https://github.com/JavierLanauGomez" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/javier-lanau-gomez" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:j.lanau.gomez@gmail.com">Email</a>
+                <a href="tel:+34635500186">+34 635 500 186</a>
             </div>
-            <p>&copy; 2024 Javier Lanau - Desarrollador Full Stack. Todos los derechos reservados.</p>
-            <p>📍 Madrid, España | 📞 +34 635 500 186 | ✉️ j.lanau.gomez@gmail.com</p>
+            <span class="footer-copy">Portfolio personal © 2026 — Javier Lanau</span>
         </div>
     </footer>
-
-    <!-- ===== MODAL CONTACTO ===== -->
-    <div class="modal-overlay" id="modal-contacto">
-        <div class="modal-card">
-            <button class="modal-close" id="modal-cerrar">&times;</button>
-            <h2>Contacto</h2>
-            <p class="modal-intro">¿Tienes una propuesta o quieres hablar? Aquí me tienes.</p>
-            <ul class="modal-links">
-                <li>
-                    <span class="modal-icon">✉️</span>
-                    <a href="mailto:j.lanau.gomez@gmail.com">j.lanau.gomez@gmail.com</a>
-                </li>
-                <li>
-                    <span class="modal-icon">📞</span>
-                    <a href="tel:+34635500186">+34 635 500 186</a>
-                </li>
-                <li>
-                    <span class="modal-icon">🔗</span>
-                    <a href="https://linkedin.com/in/javier-lanau-gomez" target="_blank">LinkedIn</a>
-                </li>
-                <li>
-                    <span class="modal-icon">💻</span>
-                    <a href="https://github.com/JavierLanauGomez" target="_blank">GitHub</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
