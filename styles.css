@@ -634,6 +634,14 @@ header.scrolled {
     border-left: 1px solid currentColor;
     opacity: 0.85;
 }
+.exp-link {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+.exp-link:hover {
+    opacity: 1;
+}
 
 /* ===== CASE STUDY / PROJECTS ===== */
 .case-study { padding: 100px 0; }
