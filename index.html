@@ -408,13 +408,13 @@
                 <div class="stack-col fade-in">
                     <h4>Herramientas</h4>
                     <ul>
-                        <li>Git</li><li>GitHub</li><li>Android Studio</li>
+                        <li>Git</li><li>GitHub</li><li>Android Studio</li><li>VS Code</li>
                     </ul>
                 </div>
                 <div class="stack-col stack-col-dark fade-in">
                     <h4>Aprendiendo ahora</h4>
                     <ul>
-                        <li>React</li><li>Enfoque full-stack moderno</li>
+                        <li>React</li><li>Spring</li><li>Node.js</li><li>Enfoque full-stack moderno</li>
                     </ul>
                 </div>
             </div>
@@ -430,7 +430,7 @@
             </h2>
             <p class="contact-sub">Si quieres hablar sobre una oportunidad, una colaboración o un proyecto, estaré encantado de escucharla.</p>
 
-            <form class="contact-form" action="mailto:j.lanau.gomez@gmail.com" method="post" enctype="text/plain">
+            <form class="contact-form" id="contact-form">
                 <div class="form-row">
                     <label>
                         <span>Nombre.*</span>
@@ -459,9 +459,13 @@
                 </div>
 
                 <div class="form-submit">
-                    <button type="submit" class="btn btn-dark">Enviar <span class="btn-arrow">↗</span></button>
+                    <button type="submit" class="btn btn-dark" id="form-btn">Enviar <span class="btn-arrow">↗</span></button>
                     <span class="form-note">Te responderé lo antes posible.</span>
                 </div>
+                <div id="form-result" class="form-result"></div>
+                <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI">
+                <input type="hidden" name="subject" value="Nuevo mensaje desde tu portfolio">
+                <input type="hidden" name="from_name" value="Portfolio Contact">
             </form>
         </div>
     </section>

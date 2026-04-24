@@ -1092,3 +1092,13 @@ footer {
     .offer-card { min-height: 240px; }
     .cs-info .cs-tag { font-size: 10px; }
 }
+
+.form-result {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-height: 24px;
+}
+.form-result--ok    { color: #22c55e; }
+.form-result--error { color: #ef4444; }
+}
