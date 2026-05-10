@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Javier Lanau Gómez | Desarrollador Junior Full-Stack</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+            line-height: 1.55;
+            color: #1a1a1a;
+            background: #f0ede6;
+        }
+
+        /* Print button — hidden on print */
+        .print-bar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .print-bar p {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        .print-btn {
+            background: #fff;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 22px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: opacity 0.2s;
+        }
+
+        .print-btn:hover { opacity: 0.85; }
+
+        /* CV container */
+        .cv {
+            max-width: 794px;
+            margin: 36px auto;
+            background: #ffffff;
+            padding: 52px 58px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        }
+
+        /* ── Header ── */
+        .cv-header {
+            border-bottom: 2.5px solid #1a1a1a;
+            padding-bottom: 18px;
+            margin-bottom: 26px;
+        }
+
+        .cv-name {
+            font-size: 26pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .cv-role {
+            font-size: 12.5pt;
+            color: #444;
+            margin-top: 5px;
+        }
+
+        .cv-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 20px;
+            margin-top: 12px;
+            font-size: 10pt;
+            color: #333;
+        }
+
+        .cv-contact a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .cv-contact a:hover { text-decoration: underline; }
+
+        /* ── Sections ── */
+        .cv-section {
+            margin-bottom: 24px;
+        }
+
+        .cv-section-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1a1a1a;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 14px;
+        }
+
+        .cv-section p {
+            font-size: 10.5pt;
+            color: #333;
+        }
+
+        /* ── Experience items ── */
+        .exp-item {
+            margin-bottom: 16px;
+        }
+
+        .exp-item:last-child { margin-bottom: 0; }
+
+        .exp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .exp-role {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .exp-date {
+            font-size: 9.5pt;
+            color: #666;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .exp-company {
+            font-size: 10pt;
+            color: #555;
+            margin-top: 1px;
+        }
+
+        .exp-desc {
+            font-size: 10.5pt;
+            color: #333;
+            margin-top: 4px;
+        }
+
+        /* ── Skills grid ── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 32px;
+        }
+
+        .skill-group { }
+
+        .skill-group-label {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .skill-group-values {
+            font-size: 10.5pt;
+            color: #333;
+        }
+
+        /* ── Print styles ── */
+        @media print {
+            body {
+                background: #fff;
+                font-size: 10pt;
+            }
+
+            .print-bar { display: none; }
+
+            .cv {
+                margin: 0;
+                padding: 28px 36px;
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .cv-section { page-break-inside: avoid; }
+
+            a { color: #1a1a1a; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-bar">
+        <p>Para guardar como PDF: haz clic en el botón y elige "Guardar como PDF" en la ventana de impresión.</p>
+        <button class="print-btn" onclick="window.print()">⬇ Guardar como PDF</button>
+    </div>
+
+    <div class="cv">
+
+        <!-- HEADER -->
+        <header class="cv-header">
+            <div class="cv-name">Javier Lanau Gómez</div>
+            <div class="cv-role">Desarrollador Junior Full-Stack &nbsp;·&nbsp; Técnico Superior DAM</div>
+            <div class="cv-contact">
+                <span>Madrid, España</span>
+                <a href="mailto:j.lanau.gomez@gmail.com">j.lanau.gomez@gmail.com</a>
+                <a href="tel:+34635500186">+34 635 500 186</a>
+                <a href="https://github.com/JavierLanauGomez" target="_blank">github.com/JavierLanauGomez</a>
+                <a href="https://www.linkedin.com/in/javierlanaugomez" target="_blank">linkedin.com/in/javierlanaugomez</a>
+            </div>
+        </header>
+
+        <!-- PERFIL -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">Perfil Profesional</h2>
+            <p>
+                Desarrollador junior con formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y base técnica sólida en Java, Python, bases de datos relacionales y desarrollo web. Experiencia real en proyectos colaborativos con estructura profesional (3XA, 3xa Projekt) y proyectos personales full-stack. Orientado al código limpio, buenas prácticas y la evolución continua hacia un perfil full-stack moderno.
+            </p>
+        </section>
+
+        <!-- EXPERIENCIA Y PROYECTOS -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">Experiencia y Proyectos</h2>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Colaborador · 3XA — Plataforma educativa</span>
+                    <span class="exp-date">En desarrollo</span>
+                </div>
+                <div class="exp-company">learn.3xa.es</div>
+                <p class="exp-desc">Desarrollo y mantenimiento de plataforma educativa en entorno real con estructura profesional. Trabajo en equipo sobre codebase activo con revisiones de código y metodologías colaborativas.</p>
+                <p class="exp-desc"><strong>Stack:</strong> PHP · Laravel · HTML · CSS · JavaScript</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Colaborador · 3xa Projekt</span>
+                    <span class="exp-date">En desarrollo</span>
+                </div>
+                <div class="exp-company">3xa.es/projekt.html</div>
+                <p class="exp-desc">Contribución al desarrollo y mejora continua de la plataforma. Implementación de nuevas funcionalidades y mantenimiento del código existente.</p>
+                <p class="exp-desc"><strong>Stack:</strong> PHP · JavaScript · TypeScript · CSS · HTML</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Proyecto Personal · TiendaAero</span>
+                    <span class="exp-date">En desarrollo</span>
+                </div>
+                <div class="exp-company">github.com/JavierLanauGomez/TiendaAero</div>
+                <p class="exp-desc">Sistema full-stack para tienda de aeromodelismo. API REST documentada con autenticación JWT, base de datos relacional normalizada y frontend SPA. Arquitectura completa desde el backend hasta la interfaz de usuario.</p>
+                <p class="exp-desc"><strong>Stack:</strong> Python · FastAPI · MySQL · JWT · HTML · CSS · JavaScript</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Proyecto Personal · Landing Page / Portfolio</span>
+                    <span class="exp-date">2025 – Actualidad</span>
+                </div>
+                <div class="exp-company">github.com/JavierLanauGomez/Landing-Page &nbsp;·&nbsp; javierlanaugomez.github.io</div>
+                <p class="exp-desc">Portfolio personal desarrollado desde cero. Diseño responsive, animaciones CSS personalizadas y microinteracciones. Publicado en GitHub Pages como carta de presentación profesional.</p>
+                <p class="exp-desc"><strong>Stack:</strong> HTML5 · CSS3 · JavaScript · Responsive Design</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Formación · Técnico Superior en DAM</span>
+                    <span class="exp-date">2024 – Actualidad</span>
+                </div>
+                <div class="exp-company">Madrid</div>
+                <p class="exp-desc">Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma. Programación orientada a objetos en Java, bases de datos relacionales, desarrollo Android, patrones de diseño, trabajo en equipo y metodologías ágiles.</p>
+            </div>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <div class="skill-group-label">Lenguajes</div>
+                    <div class="skill-group-values">Java &nbsp;·&nbsp; Python &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; HTML &nbsp;·&nbsp; CSS</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label">Backend &amp; Bases de Datos</div>
+                    <div class="skill-group-values">FastAPI &nbsp;·&nbsp; MySQL &nbsp;·&nbsp; SQLite &nbsp;·&nbsp; JWT &nbsp;·&nbsp; REST API</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label">Frontend</div>
+                    <div class="skill-group-values">HTML5 &nbsp;·&nbsp; CSS3 &nbsp;·&nbsp; JavaScript DOM &nbsp;·&nbsp; Responsive Design &nbsp;·&nbsp; Consumo de APIs</div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-group-label">Herramientas</div>
+                    <div class="skill-group-values">Git &nbsp;·&nbsp; GitHub &nbsp;·&nbsp; Android Studio &nbsp;·&nbsp; VS Code</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- APRENDIZAJE CONTINUO -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">Aprendizaje Continuo</h2>
+            <p>React &nbsp;·&nbsp; Spring &nbsp;·&nbsp; Node.js &nbsp;·&nbsp; Arquitecturas full-stack modernas</p>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section class="cv-section">
+            <h2 class="cv-section-title">Idiomas</h2>
+            <p>Español (nativo) &nbsp;·&nbsp; Inglés (nivel intermedio)</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
