@@ -31,10 +31,10 @@ Tipografías: Inter · Space Grotesk · Caveat (Google Fonts)
 | Categoría | Tecnologías |
 |---|---|
 | Lenguajes | Java · Python · JavaScript · HTML · CSS |
-| Backend & datos | FastAPI · MySQL · SQLite · JWT · REST API |
+| Backend & datos | FastAPI · MySQL · SQLite · JWT · REST API . Sql Server |
 | Frontend | HTML5/CSS3 · JavaScript DOM · Responsive · Consumo de APIs |
 | Herramientas | Git · GitHub · Android Studio |
-| Aprendiendo | React · Full-stack moderno |
+| Aprendiendo | Angular ·  |
 
 ---
 
