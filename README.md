@@ -61,6 +61,8 @@ Landing-Page/
 └── JavierLanau2.png  # Foto de perfil
 ```
 
+---
+
 ## Ejecutar
 
 ```bash
