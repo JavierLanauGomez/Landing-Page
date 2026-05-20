@@ -9,7 +9,7 @@ Portfolio personal desarrollado desde cero con HTML, CSS y JavaScript puro. Redi
 - **Hero** — presentación con strip de habilidades animado y acceso directo a redes
 - **Sobre mí** — perfil técnico y enfoque profesional
 - **Lo que aporto** — áreas clave: Java/Backend, Desarrollo Web, Bases de datos & APIs
-- **Experiencia** — colaboraciones activas (3XA, 3XATV) y proyectos propios
+- **Experiencia** — colaboraciones activas (3XA) y proyectos propios
 - **Proyectos** — case studies de TiendaAero, 3XA, 3XATV y este portfolio
 - **Stack** — tecnologías organizadas por categoría
 - **Contacto** — formulario con chips de intención y datos directos
@@ -45,9 +45,6 @@ Tipografías: Inter · Space Grotesk · Caveat (Google Fonts)
 
 **3XA** — plataforma educativa. Colaboración activa en desarrollo y mantenimiento.
 → [learn.3xa.es](https://learn.3xa.es/)
-
-**3XATV** — plataforma audiovisual. Contribución al desarrollo de nuevas funcionalidades.
-→ [tv.3xa.es](https://tv.3xa.es/)
 
 ---
 
