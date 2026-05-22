@@ -33,7 +33,7 @@ Tipografías: Inter · Space Grotesk · Caveat (Google Fonts)
 | Lenguajes | Java · Python · JavaScript · HTML · CSS |
 | Backend & datos | FastAPI · MySQL · SQLite · JWT · REST API . Sql Server |
 | Frontend | HTML5/CSS3 · JavaScript DOM · Responsive · Consumo de APIs |
-| Herramientas | Git · GitHub · Android Studio |
+| Herramientas | Git · GitHub ·|
 | Aprendiendo | Angular ·  |
 
 ---
@@ -45,6 +45,9 @@ Tipografías: Inter · Space Grotesk · Caveat (Google Fonts)
 
 **3XA** — plataforma educativa. Colaboración activa en desarrollo y mantenimiento.
 → [learn.3xa.es](https://learn.3xa.es/)
+
+**3XA** — plataforma ERP/software de gestión empresarial. Colaboración activa en desarrollo y mantenimiento.
+→ [learn.projekt.es](https://learn.3xa.es/)
 
 ---
 
