@@ -1,95 +1,146 @@
-// ===== NAVEGACIÓN MÓVIL =====
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+/// ===== MENÚ MÓVIL (HAMBURGUESA) =====
+// Busca el botón del menú hamburguesa y la lista de enlaces
+const botonMenu = document.getElementById('menu-toggle');
+const enlaceNavegacion = document.getElementById('nav-links');
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
+// Si ambos elementos existen en el HTML
+if (botonMenu && enlaceNavegacion) {
+    // Cuando haces clic en el botón hamburguesa
+    botonMenu.addEventListener('click', () => {
+        // Añade o quita la clase 'active' para mostrar/ocultar el menú
+        enlaceNavegacion.classList.toggle('active');
     });
 
-    navLinks.addEventListener('click', (e) => {
-        if (e.target.closest('a')) {
-            navLinks.classList.remove('active');
+    // Cuando haces clic en cualquier enlace del menú
+    enlaceNavegacion.addEventListener('click', (evento) => {
+        // Si el clic fue en un enlace (<a>)
+        if (evento.target.closest('a')) {
+            // Cierra el menú móvil automáticamente
+            enlaceNavegacion.classList.remove('active');
         }
     });
 }
 
-// ===== SCROLL SUAVE =====
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (!href || href === '#') return;
-        const target = document.querySelector(href);
-        if (!target) return;
-        e.preventDefault();
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 0;
-        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight + 1;
-        window.scrollTo({ top, behavior: 'smooth' });
+// ===== SCROLL SUAVE AL HACER CLIC EN ENLACES INTERNOS =====
+// Busca todos los enlaces que empiezan con # (ej: #sobre-mi, #proyectos)
+document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+    enlace.addEventListener('click', function (evento) {
+        const destino = this.getAttribute('href');
+        
+        // Si el enlace no tiene destino válido, no hacer nada
+        if (!destino || destino === '#') return;
+        
+        // Busca la sección de destino en el HTML
+        const seccionDestino = document.querySelector(destino);
+        if (!seccionDestino) return;
+        
+        // Prevenir el salto brusco predeterminado del navegador
+        evento.preventDefault();
+        
+        // Calcula la altura del header para ajustar el scroll
+        const cabecera = document.querySelector('header');
+        const alturaCabecera = cabecera ? cabecera.offsetHeight : 0;
+        
+        // Calcula la posición exacta donde hacer scroll
+        const posicionFinal = seccionDestino.getBoundingClientRect().top + window.scrollY - alturaCabecera + 1;
+        
+        // Hacer scroll suave hasta esa posición
+        window.scrollTo({ top: posicionFinal, behavior: 'smooth' });
     });
 });
 
-// ===== HEADER SCROLLED =====
-const header = document.querySelector('header');
-const onScroll = () => {
-    if (!header) return;
-    if (window.scrollY > 40) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-};
-window.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+// ===== CAMBIAR ESTILO DEL HEADER AL HACER SCROLL =====
+const cabecera = document.querySelector('header');
 
-// ===== FADE-IN ON SCROLL =====
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
+// Función que se ejecuta cada vez que haces scroll
+const alHacerScroll = () => {
+    if (!cabecera) return;
+    
+    // Si has bajado más de 40 píxeles desde arriba
+    if (window.scrollY > 40) {
+        cabecera.classList.add('scrolled'); // Añade clase CSS
+    } else {
+        cabecera.classList.remove('scrolled'); // Quita clase CSS
+    }
+};
+
+// Ejecutar la función cada vez que se hace scroll
+window.addEventListener('scroll', alHacerScroll, { passive: true });
+// Ejecutar también al cargar la página
+alHacerScroll();
+
+// ===== ANIMACIÓN DE APARICIÓN AL HACER SCROLL =====
+// Observador para detectar cuando un elemento entra en pantalla
+const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+        // Si el elemento es visible en la pantalla
+        if (entrada.isIntersecting) {
+            // Añadir clase 'visible' para activar animación CSS
+            entrada.target.classList.add('visible');
+            // Dejar de observar ese elemento (ya apareció)
+            observador.unobserve(entrada.target);
         }
     });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { 
+    threshold: 0.1, // El elemento debe estar 10% visible
+    rootMargin: '0px 0px -40px 0px' // Margen de detección
+});
 
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// Observar todos los elementos con clase 'fade-in'
+document.querySelectorAll('.fade-in').forEach(elemento => observador.observe(elemento));
 
 // ===== FORMULARIO DE CONTACTO =====
-const contactForm = document.getElementById('contact-form');
-const formResult = document.getElementById('form-result');
-const formBtn = document.getElementById('form-btn');
+const formularioContacto = document.getElementById('contact-form');
+const resultadoFormulario = document.getElementById('form-result');
+const botonEnviar = document.getElementById('form-btn');
 
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+if (formularioContacto) {
+    // Cuando se envía el formulario
+    formularioContacto.addEventListener('submit', async (evento) => {
+        // Prevenir que la página se recargue
+        evento.preventDefault();
 
-        const data = Object.fromEntries(new FormData(contactForm));
-        const temas = contactForm.querySelectorAll('input[name="tema"]:checked');
-        data.tema = Array.from(temas).map(cb => cb.value).join(', ');
+        // Recoger todos los datos del formulario
+        const datos = Object.fromEntries(new FormData(formularioContacto));
+        
+        // Recoger todos los checkboxes marcados de 'tema'
+        const temasSeleccionados = formularioContacto.querySelectorAll('input[name="tema"]:checked');
+        datos.tema = Array.from(temasSeleccionados).map(checkbox => checkbox.value).join(', ');
 
-        formBtn.disabled = true;
-        formBtn.textContent = 'Enviando...';
-        formResult.className = 'form-result';
-        formResult.textContent = '';
+        // Deshabilitar botón mientras se envía
+        botonEnviar.disabled = true;
+        botonEnviar.textContent = 'Enviando...';
+        resultadoFormulario.className = 'form-result';
+        resultadoFormulario.textContent = '';
 
         try {
-            const res = await fetch('https://api.web3forms.com/submit', {
+            // Enviar datos a Web3Forms (servicio de formularios)
+            const respuesta = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify(data),
+                headers: { 
+                    'Content-Type': 'application/json', 
+                    Accept: 'application/json' 
+                },
+                body: JSON.stringify(datos),
             });
-            const json = await res.json();
+            const jsonRespuesta = await respuesta.json();
 
-            if (res.ok && json.success) {
-                formResult.className = 'form-result form-result--ok';
-                formResult.textContent = '¡Mensaje enviado! Te responderé lo antes posible.';
-                contactForm.reset();
+            // Si el envío fue exitoso
+            if (respuesta.ok && jsonRespuesta.success) {
+                resultadoFormulario.className = 'form-result form-result--ok';
+                resultadoFormulario.textContent = '¡Mensaje enviado! Te responderé lo antes posible.';
+                formularioContacto.reset(); // Limpiar formulario
             } else {
-                throw new Error(json.message || 'Error al enviar');
+                throw new Error(jsonRespuesta.message || 'Error al enviar');
             }
         } catch {
-            formResult.className = 'form-result form-result--error';
-            formResult.textContent = 'Algo salió mal. Escríbeme directamente a j.lanau.gomez@gmail.com';
+            // Si hubo error
+            resultadoFormulario.className = 'form-result form-result--error';
+            resultadoFormulario.textContent = 'Algo salió mal. Escríbeme directamente a j.lanau.gomez@gmail.com';
         } finally {
-            formBtn.disabled = false;
-            formBtn.innerHTML = 'Enviar <span class="btn-arrow">↗</span>';
+            // Siempre volver a habilitar el botón
+            botonEnviar.disabled = false;
+            botonEnviar.innerHTML = 'Enviar <span class="btn-arrow">↗</span>';
         }
     });
-}
+}s

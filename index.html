@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Javier Lanau, Tecnico Superior con experiencia en Java, Python, desarrollo web, APIs y bases de datos.">
+    <meta name="description" content="Portfolio de Javier Lanau, Técnico Superior con experiencia en Java, Python, desarrollo web, APIs y bases de datos.">
     <meta name="keywords" content="javier lanau, desarrollador junior, DAM, java, python, desarrollo web, full stack junior, portfolio programador">
     <title>Javier Lanau | Desarrollador Junior Web y Software</title>
-    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Caveat:wght@500;700&display=swap)" rel="stylesheet">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ===== HEADER ===== -->
+    
+    <!-- ===== HEADER (Navegación fija) ===== -->
     <header>
         <nav class="nav">
-            <a href="#home" class="logo">it's me<span class="logo-underline"></span></a>
+            <!-- Logo -->
+            <a href="#home" class="logo">
+                it's me
+                <span class="logo-underline"></span>
+            </a>
 
+            <!-- Enlaces de navegación -->
             <ul class="nav-links" id="nav-links">
                 <li>
                     <a href="#projects">
@@ -38,41 +48,54 @@
                 </li>
             </ul>
 
+            <!-- Botón hamburguesa móvil -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </nav>
     </header>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== SECCIÓN HERO (Presentación principal) ===== -->
     <section class="hero" id="home">
+        <!-- Degradado decorativo de fondo -->
         <div class="hero-gradient" aria-hidden="true"></div>
+        <!-- Líneas decorativas -->
         <div class="hero-decor-lines" aria-hidden="true"></div>
 
         <div class="hero-inner">
+            <!-- Texto principal -->
             <div class="hero-text">
+                <!-- Emoji saludo -->
                 <span class="hero-wave" aria-hidden="true">👋</span>
+                
+                <!-- Título principal -->
                 <h1 class="hero-title">
                     <span class="hero-hello">Hola!</span>
                     <span class="hero-name">Soy Javier Lanau</span>
                 </h1>
 
+                <!-- Rol/puesto -->
                 <div class="hero-role">
                     <span class="hero-role-line"></span>
                     <span class="hero-role-text">Desarrollador Junior Full-Stack</span>
                     <span class="hero-role-star" aria-hidden="true">✦</span>
                 </div>
 
+                <!-- Descripción breve -->
                 <p class="hero-desc">
-                    Tecnico <strong>superior</strong> en Madrid, con experiencia en Java, Python, bases de datos y desarrollo web. Construyo proyectos útiles, limpios y escalables mientras sigo creciendo como desarrollador.
+                    Técnico <strong>superior</strong> en Madrid, con experiencia en Java, Python, bases de datos y desarrollo web. Construyo proyectos útiles, limpios y escalables mientras sigo creciendo como desarrollador.
                 </p>
 
+                <!-- Lista de características -->
                 <ul class="hero-checks">
                     <li><span class="check">✓</span> Base técnica sólida en software y web</li>
                     <li><span class="check">✓</span> Experiencia real en proyectos colaborativos</li>
                     <li><span class="check">✓</span> Código limpio y buenas prácticas</li>
                 </ul>
 
+                <!-- Botones de acción -->
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-dark">Hablemos</a>
                     <a href="#projects" class="btn btn-ghost">
@@ -81,16 +104,19 @@
                 </div>
             </div>
 
+            <!-- Foto y elementos visuales -->
             <div class="hero-visual">
                 <img src="JavierLanau2.png" alt="Javier Lanau" class="hero-photo">
+                <!-- Badge circular "Hello" -->
                 <div class="hero-hello-badge" aria-hidden="true">
                     <span>Hello</span>
                 </div>
+                <!-- Decoración ondulada -->
                 <span class="hero-squiggle" aria-hidden="true">〰</span>
             </div>
         </div>
 
-        <!-- Strip de habilidades -->
+        <!-- Franja de habilidades animada -->
         <div class="skills-strip">
             <div class="skills-track">
                 <span>JAVA</span><span class="dot">✦</span>
@@ -98,6 +124,7 @@
                 <span>DESARROLLO WEB</span><span class="dot">✦</span>
                 <span>APIS REST</span><span class="dot">✦</span>
                 <span>MYSQL</span><span class="dot">✦</span>
+                <!-- Duplicado para animación infinita -->
                 <span>JAVA</span><span class="dot">✦</span>
                 <span>PYTHON</span><span class="dot">✦</span>
                 <span>DESARROLLO WEB</span><span class="dot">✦</span>
@@ -106,11 +133,11 @@
             </div>
         </div>
 
-        <!-- Redes sociales top -->
+        <!-- Redes sociales y contacto -->
         <div class="hero-social">
             <div class="hero-social-left">
-                <a href="[github.com](https://github.com/JavierLanauGomez)" target="_blank" rel="noopener">GitHub</a>
-                <a href="[linkedin.com](https://www.linkedin.com/feed/)" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/JavierLanauGomez" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="tel:+34635500186">+34 635 500 186</a>
             </div>
             <div class="hero-social-right">
@@ -120,15 +147,19 @@
         </div>
     </section>
 
-    <!-- ===== SOBRE MÍ ===== -->
+    <!-- ===== SECCIÓN SOBRE MÍ ===== -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-tag">· SOBRE MÍ</div>
+            
             <div class="about-grid">
+                <!-- Título de sección -->
                 <h2 class="section-title">
                     Un perfil junior<br>
                     con <em>base sólida</em> <span class="star" aria-hidden="true">✦</span>
                 </h2>
+                
+                <!-- Texto descriptivo -->
                 <div class="about-text">
                     <p>
                         Soy un desarrollador junior dentro del ciclo de <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>, con base técnica en programación, bases de datos y desarrollo web.
@@ -144,9 +175,10 @@
         </div>
     </section>
 
-    <!-- ===== ÁREAS / OFERTA ===== -->
+    <!-- ===== SECCIÓN ÁREAS DE TRABAJO ===== -->
     <section class="offering" id="services">
         <div class="container">
+            <!-- Encabezado de sección -->
             <div class="offering-head">
                 <div>
                     <div class="section-tag">· LO QUE APORTO</div>
@@ -160,13 +192,16 @@
                 </div>
             </div>
 
+            <!-- Indicador de scroll lateral -->
             <div class="offering-rail">
                 <span class="offering-scroll-label">SCROLL DOWN</span>
                 <span class="offering-line"></span>
                 <span class="offering-arrow">↓</span>
             </div>
 
+            <!-- Grid de tarjetas de servicios -->
             <div class="offering-grid">
+                <!-- Tarjeta 1: Java & Backend -->
                 <article class="offer-card offer-card-dark fade-in">
                     <div class="offer-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -178,6 +213,7 @@
                     <a href="#projects" class="offer-link">LEER MÁS <span>→</span></a>
                 </article>
 
+                <!-- Tarjeta 2: Bases de datos -->
                 <article class="offer-card fade-in">
                     <div class="offer-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -190,6 +226,7 @@
                     <a href="#projects" class="offer-link">LEER MÁS <span>→</span></a>
                 </article>
 
+                <!-- Tarjeta 3: Desarrollo Web -->
                 <article class="offer-card fade-in">
                     <div class="offer-icon">
                         <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -205,9 +242,10 @@
         </div>
     </section>
 
-    <!-- ===== EXPERIENCIA ===== -->
+    <!-- ===== SECCIÓN EXPERIENCIA ===== -->
     <section class="experience">
         <div class="container">
+            <!-- Encabezado -->
             <div class="exp-head">
                 <span class="exp-star" aria-hidden="true">✦</span>
                 <h2 class="section-title centered">EXPERIENCIA</h2>
@@ -215,6 +253,7 @@
                 <span class="exp-lines" aria-hidden="true"></span>
             </div>
 
+            <!-- Lista de experiencias -->
             <ul class="exp-list">
                 <li class="exp-item exp-item-dark fade-in">
                     <span class="exp-num">1</span>
@@ -224,6 +263,7 @@
                     </div>
                     <span class="exp-duration">EN DESARROLLO</span>
                 </li>
+                
                 <li class="exp-item fade-in">
                     <span class="exp-num">2</span>
                     <div class="exp-body">
@@ -232,6 +272,7 @@
                     </div>
                     <span class="exp-duration">EN DESARROLLO</span>
                 </li>
+                
                 <li class="exp-item fade-in">
                     <span class="exp-num">3</span>
                     <div class="exp-body">
@@ -240,21 +281,23 @@
                     </div>
                     <span class="exp-duration">EN DESARROLLO</span>
                 </li>
+                
                 <li class="exp-item fade-in">
                     <span class="exp-num">4</span>
                     <div class="exp-body">
                         <h3>Proyecto personal — Landing Page</h3>
                         <p>Portfolio personal · HTML5 + CSS3 + JavaScript</p>
                     </div>
-                    <a href="[github.com](https://github.com/JavierLanauGomez/Landing-Page)" target="_blank" rel="noopener" class="exp-duration exp-link">VER EN GITHUB ↗</a>
+                    <a href="https://github.com/JavierLanauGomez/Landing-Page" target="_blank" rel="noopener" class="exp-duration exp-link">VER EN GITHUB ↗</a>
                 </li>
             </ul>
         </div>
     </section>
 
-    <!-- ===== PROYECTOS / CASE STUDY ===== -->
+    <!-- ===== SECCIÓN PROYECTOS ===== -->
     <section class="case-study" id="projects">
         <div class="container">
+            <!-- Encabezado -->
             <div class="cs-head">
                 <span class="cs-dots" aria-hidden="true"></span>
                 <h2 class="section-title centered">PROYECTOS</h2>
@@ -263,6 +306,7 @@
 
             <!-- Proyecto destacado: TiendaAero -->
             <div class="cs-row cs-featured fade-in">
+                <!-- Preview/mockup del proyecto -->
                 <div class="cs-preview cs-preview-dark">
                     <div class="cs-mock">
                         <div class="cs-mock-bar">
@@ -280,30 +324,41 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Información del proyecto -->
                 <div class="cs-info">
                     <span class="cs-tag">PROYECTO DESTACADO</span>
                     <h3>TiendaAero — sistema full-stack para tienda de aeromodelismo.</h3>
                     <p>API REST en Python/FastAPI, base de datos MySQL, autenticación JWT y frontend en HTML, CSS y JavaScript. Arquitectura completa con backend, datos e interfaz.</p>
                     <div class="cs-tech">
-                        <span>Python</span><span>FastAPI</span><span>MySQL</span><span>JWT</span><span>REST</span>
+                        <span>Python</span>
+                        <span>FastAPI</span>
+                        <span>MySQL</span>
+                        <span>JWT</span>
+                        <span>REST</span>
                     </div>
-                    <a href="[github.com](https://github.com/JavierLanauGomez/TiendaAero)" target="_blank" rel="noopener" class="cs-link">Ver en GitHub <span>↗</span></a>
+                    <a href="https://github.com/JavierLanauGomez/TiendaAero" target="_blank" rel="noopener" class="cs-link">Ver en GitHub <span>↗</span></a>
                 </div>
             </div>
 
-            <!-- 3XA + 3XATV: dos columnas -->
+            <!-- Proyectos en dos columnas: 3XA + 3XATV -->
             <div class="cs-two-col">
+                <!-- Proyecto 3XA -->
                 <article class="cs-row cs-small fade-in">
                     <div class="cs-info">
                         <span class="cs-tag">COLABORACIÓN</span>
                         <h3>3XA — plataforma educativa.</h3>
                         <p>Participo en el desarrollo y mantenimiento de la plataforma, trabajando en un entorno real con estructura profesional.</p>
                         <div class="cs-tech">
-                            <span>PHP</span><span>Laravel</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
                         </div>
                         <div class="cs-links-row">
-                            <a href="[learn.3xa.es](https://learn.3xa.es/)" target="_blank" rel="noopener" class="cs-link">Ver web <span>↗</span></a>
-                            <a href="[github.com](https://github.com/valfiguer/3XA)" target="_blank" rel="noopener" class="cs-link muted">GitHub <span>↗</span></a>
+                            <a href="https://learn.3xa.es/" target="_blank" rel="noopener" class="cs-link">Ver web <span>↗</span></a>
+                            <a href="https://github.com/valfiguer/3XA" target="_blank" rel="noopener" class="cs-link muted">GitHub <span>↗</span></a>
                         </div>
                     </div>
                     <div class="cs-preview">
@@ -322,6 +377,7 @@
                     </div>
                 </article>
 
+                <!-- Proyecto 3XA Projekt -->
                 <article class="cs-row cs-small fade-in">
                     <div class="cs-preview">
                         <div class="cs-mock light">
@@ -343,25 +399,32 @@
                         <h3>3xa Projekt — plataforma.</h3>
                         <p>Contribuyo al desarrollo y mantenimiento de la plataforma, colaborando en mejoras continuas y nuevas funcionalidades.</p>
                         <div class="cs-tech">
-                            <span>PHP</span><span>JavaScript</span><span>TypeScript</span><span>CSS</span><span>HTML</span>
+                            <span>PHP</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>CSS</span>
+                            <span>HTML</span>
                         </div>
                         <div class="cs-links-row">
-                            <a href="[3xa.es](https://3xa.es/projekt.html)" target="_blank" rel="noopener" class="cs-link">Ver web <span>↗</span></a>
+                            <a href="https://3xa.es/projekt.html" target="_blank" rel="noopener" class="cs-link">Ver web <span>↗</span></a>
                         </div>
                     </div>
                 </article>
             </div>
 
-            <!-- Landing personal -->
+            <!-- Landing Page Personal -->
             <div class="cs-row cs-reverse fade-in">
                 <div class="cs-info">
                     <span class="cs-tag">PROYECTO PROPIO</span>
                     <h3>Landing Page Personal.</h3>
                     <p>Portfolio desarrollado desde cero con diseño responsive, animaciones CSS y microinteracciones cuidadas. Primer paso de mi marca personal como desarrollador.</p>
                     <div class="cs-tech">
-                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
                     </div>
-                    <a href="[github.com](https://github.com/JavierLanauGomez/Landing-Page)" target="_blank" rel="noopener" class="cs-link">Ver en GitHub <span>↗</span></a>
+                    <a href="https://github.com/JavierLanauGomez/Landing-Page" target="_blank" rel="noopener" class="cs-link">Ver en GitHub <span>↗</span></a>
                 </div>
                 <div class="cs-preview">
                     <div class="cs-mock light">
@@ -379,57 +442,86 @@
         </div>
     </section>
 
-    <!-- ===== STACK ===== -->
+    <!-- ===== SECCIÓN STACK TECNOLÓGICO ===== -->
     <section class="stack">
         <div class="container">
             <div class="section-tag centered">· STACK</div>
             <h2 class="section-title centered">Tecnologías con las que trabajo</h2>
 
             <div class="stack-grid">
+                <!-- Lenguajes de programación -->
                 <div class="stack-col fade-in">
                     <h4>Lenguajes</h4>
                     <ul>
-                        <li>Java</li><li>Python</li><li>JavaScript</li><li>HTML</li><li>CSS</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
                     </ul>
                 </div>
+                
+                <!-- Backend y bases de datos -->
                 <div class="stack-col fade-in">
                     <h4>Backend &amp; datos</h4>
                     <ul>
-                        <li>FastAPI</li><li>MySQL</li><li>SQLite</li><li>JWT</li><li>REST API</li>
+                        <li>FastAPI</li>
+                        <li>MySQL</li>
+                        <li>SQLite</li>
+                        <li>JWT</li>
+                        <li>REST API</li>
                     </ul>
                 </div>
+                
+                <!-- Frontend -->
                 <div class="stack-col fade-in">
                     <h4>Frontend</h4>
                     <ul>
-                        <li>HTML5 / CSS3</li><li>JavaScript (DOM)</li><li>Responsive design</li><li>Consumo de APIs</li>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript (DOM)</li>
+                        <li>Responsive design</li>
+                        <li>Consumo de APIs</li>
                     </ul>
                 </div>
+                
+                <!-- Herramientas -->
                 <div class="stack-col fade-in">
                     <h4>Herramientas</h4>
                     <ul>
-                        <li>Git</li><li>GitHub</li><li>Android Studio</li><li>VS Code</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>VS Code</li>
                     </ul>
                 </div>
+                
+                <!-- Aprendiendo actualmente -->
                 <div class="stack-col stack-col-dark fade-in">
                     <h4>Aprendiendo ahora</h4>
                     <ul>
-                        <li>React</li><li>Spring</li><li>Node.js</li><li>Enfoque full-stack moderno</li>
+
+                        <li>Angular</li>
+                        <li>Spring</li>
+                        <li>Enfoque full-stack moderno</li>  
+                        
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CONTACTO ===== -->
+    <!-- ===== SECCIÓN CONTACTO ===== -->
     <section class="contact" id="contact">
         <div class="container">
+            <!-- Título de contacto -->
             <h2 class="contact-title">
                 <span class="contact-soft">¿Hablamos?</span> Cuéntame<br>
                 <span class="contact-arrow">→</span> sobre tu proyecto
             </h2>
             <p class="contact-sub">Si quieres hablar sobre una oportunidad, una colaboración o un proyecto, estaré encantado de escucharla.</p>
 
+            <!-- Formulario de contacto -->
             <form class="contact-form" id="contact-form">
+                <!-- Fila: Nombre y Email -->
                 <div class="form-row">
                     <label>
                         <span>Nombre.*</span>
@@ -440,27 +532,52 @@
                         <input type="email" name="email" placeholder="Dónde puedo responderte" required>
                     </label>
                 </div>
+                
+                <!-- Empresa o web (opcional) -->
                 <label class="form-full">
                     <span>Empresa o web</span>
                     <input type="text" name="empresa" placeholder="Tu empresa o proyecto">
                 </label>
 
+                <!-- Chips de temas -->
                 <div class="form-chips">
                     <span class="form-chips-label">¿Qué tienes en mente?*</span>
                     <div class="form-chips-list">
-                        <label class="chip"><input type="checkbox" name="tema" value="Colaboración"><span>Colaboración</span></label>
-                        <label class="chip"><input type="checkbox" name="tema" value="Proyecto freelance"><span>Proyecto freelance</span></label>
-                        <label class="chip"><input type="checkbox" name="tema" value="Desarrollo web"><span>Desarrollo web</span></label>
-                        <label class="chip"><input type="checkbox" name="tema" value="Backend / API"><span>Backend / API</span></label>
-                        <label class="chip"><input type="checkbox" name="tema" value="Otro"><span>Otro</span></label>
+                        <label class="chip">
+                            <input type="checkbox" name="tema" value="Colaboración">
+                            <span>Colaboración</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" name="tema" value="Proyecto freelance">
+                            <span>Proyecto freelance</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" name="tema" value="Desarrollo web">
+                            <span>Desarrollo web</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" name="tema" value="Backend / API">
+                            <span>Backend / API</span>
+                        </label>
+                        <label class="chip">
+                            <input type="checkbox" name="tema" value="Otro">
+                            <span>Otro</span>
+                        </label>
                     </div>
                 </div>
 
+                <!-- Botón de envío -->
                 <div class="form-submit">
-                    <button type="submit" class="btn btn-dark" id="form-btn">Enviar <span class="btn-arrow">↗</span></button>
+                    <button type="submit" class="btn btn-dark" id="form-btn">
+                        Enviar <span class="btn-arrow">↗</span>
+                    </button>
                     <span class="form-note">Te responderé lo antes posible.</span>
                 </div>
+                
+                <!-- Resultado del formulario -->
                 <div id="form-result" class="form-result"></div>
+                
+                <!-- Campos ocultos de Web3Forms -->
                 <input type="hidden" name="access_key" value="cb660904-2374-4b1f-8712-8b3037e7a482">
                 <input type="hidden" name="subject" value="Nuevo mensaje desde tu portfolio">
                 <input type="hidden" name="from_name" value="Portfolio Contact">
@@ -472,18 +589,22 @@
     <footer>
         <div class="container footer-inner">
             <span class="footer-x" aria-hidden="true">✕</span>
+            
+            <!-- Enlaces del footer -->
             <div class="footer-links">
-                <a href="[github.com](https://github.com/JavierLanauGomez)" target="_blank" rel="noopener">GitHub</a>
-                <a href="[linkedin.com](https://www.linkedin.com/feed/)" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/JavierLanauGomez" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="mailto:j.lanau.gomez@gmail.com">Email</a>
                 <a href="tel:+34635500186">+34 635 500 186</a>
                 <a href="cv.html" target="_blank" rel="noopener" class="footer-cv">Ver CV ↓</a>
             </div>
+            
+            <!-- Copyright -->
             <span class="footer-copy">Portfolio personal © 2026 — Javier Lanau</span>
         </div>
     </footer>
 
+    <!-- Script JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
-
