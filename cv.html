@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV — Javier Lanau Gómez | Desarrollador Junior Full-Stack</title>
+    <title>CV — Javier Lanau Gómez | Full-Stack Developer</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 11pt;
-            line-height: 1.55;
+            font-size: 10.5pt;
+            line-height: 1.5;
             color: #1a1a1a;
-            background: #f0ede6;
+            background: #e8e4dd;
         }
 
-        /* Print button — hidden on print */
+        /* ── Print bar ── */
         .print-bar {
             position: sticky;
             top: 0;
@@ -23,178 +23,375 @@
             background: #1a1a1a;
             color: #fff;
             text-align: center;
-            padding: 12px 20px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 16px;
         }
-
-        .print-bar p {
-            font-size: 13px;
-            opacity: 0.85;
-        }
-
+        .print-bar p { font-size: 12px; opacity: 0.8; }
         .print-btn {
             background: #fff;
             color: #1a1a1a;
             border: none;
-            border-radius: 6px;
-            padding: 8px 22px;
-            font-size: 13px;
+            border-radius: 5px;
+            padding: 7px 20px;
+            font-size: 12px;
             font-weight: 700;
             cursor: pointer;
-            font-family: Arial, sans-serif;
             transition: opacity 0.2s;
         }
+        .print-btn:hover { opacity: 0.8; }
 
-        .print-btn:hover { opacity: 0.85; }
-
-        /* CV container */
+        /* ── CV wrapper ── */
         .cv {
-            max-width: 794px;
-            margin: 36px auto;
-            background: #ffffff;
-            padding: 52px 58px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            max-width: 900px;
+            margin: 32px auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.18);
         }
 
-        /* ── Header ── */
-        .cv-header {
-            border-bottom: 2.5px solid #1a1a1a;
-            padding-bottom: 18px;
-            margin-bottom: 26px;
-        }
-
-        .cv-name {
-            font-size: 26pt;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-
-        .cv-role {
-            font-size: 12.5pt;
-            color: #444;
-            margin-top: 5px;
-        }
-
-        .cv-contact {
+        /* ══════════════ SIDEBAR ══════════════ */
+        .sidebar {
+            background: #1e2d3d;
+            color: #e0e6ef;
+            padding: 32px 20px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 6px 20px;
-            margin-top: 12px;
-            font-size: 10pt;
-            color: #333;
+            flex-direction: column;
+            gap: 24px;
         }
 
-        .cv-contact a {
-            color: #333;
-            text-decoration: none;
+        /* Photo + name block */
+        .sidebar-profile {
+            text-align: center;
+        }
+        .sidebar-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #c9a84c;
+            margin-bottom: 12px;
+        }
+        .sidebar-name {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .sidebar-role {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #c9a84c;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-top: 4px;
         }
 
-        .cv-contact a:hover { text-decoration: underline; }
-
-        /* ── Sections ── */
-        .cv-section {
-            margin-bottom: 24px;
-        }
-
-        .cv-section-title {
-            font-size: 9.5pt;
+        /* Sidebar section title */
+        .sb-title {
+            font-size: 8pt;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #1a1a1a;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-            margin-bottom: 14px;
+            color: #c9a84c;
+            margin-bottom: 10px;
         }
 
-        .cv-section p {
-            font-size: 10.5pt;
-            color: #333;
+        /* Contact */
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 9pt;
+            color: #ccd4df;
+        }
+        .contact-list .icon {
+            font-size: 11px;
+            width: 14px;
+            text-align: center;
+            flex-shrink: 0;
+            color: #c9a84c;
+        }
+        .contact-list a {
+            color: #ccd4df;
+            text-decoration: none;
+        }
+        .contact-list a:hover { color: #fff; }
+
+        /* Skills */
+        .skill-category {
+            margin-bottom: 12px;
+        }
+        .skill-category:last-child { margin-bottom: 0; }
+        .skill-cat-label {
+            font-size: 8pt;
+            font-weight: 700;
+            color: #9bb0c7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .tag {
+            font-size: 8pt;
+            color: #dce6f0;
+            border: 1px solid #3d5268;
+            border-radius: 4px;
+            padding: 2px 7px;
+            white-space: nowrap;
         }
 
-        /* ── Experience items ── */
+        /* Education */
+        .edu-item {
+            margin-bottom: 12px;
+        }
+        .edu-item:last-child { margin-bottom: 0; }
+        .edu-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .edu-meta {
+            font-size: 8.5pt;
+            color: #8fa8c0;
+            margin-top: 2px;
+        }
+        .edu-stack {
+            font-size: 8.5pt;
+            color: #9bb0c7;
+            margin-top: 2px;
+        }
+
+        /* Certifications */
+        .cert-item {
+            background: #16222e;
+            border-radius: 6px;
+            padding: 10px 12px;
+        }
+        .cert-name {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+        .cert-meta {
+            font-size: 8.5pt;
+            color: #8fa8c0;
+            margin-top: 3px;
+        }
+
+        /* Languages */
+        .lang-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .lang-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9.5pt;
+        }
+        .lang-name { color: #dce6f0; }
+        .lang-level { color: #c9a84c; font-weight: 700; }
+
+        /* ══════════════ MAIN CONTENT ══════════════ */
+        .main {
+            background: #fff;
+            padding: 36px 36px 40px;
+        }
+
+        /* Main header */
+        .main-header {
+            border-bottom: 2px solid #e8e4dd;
+            padding-bottom: 18px;
+            margin-bottom: 28px;
+        }
+        .main-name {
+            font-size: 28pt;
+            font-weight: 700;
+            color: #1e2d3d;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .main-role {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #c9a84c;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+        .main-summary {
+            font-size: 10pt;
+            color: #444;
+            margin-top: 14px;
+            line-height: 1.6;
+        }
+
+        /* Section titles (right side) */
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 9pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: #1e2d3d;
+            border-left: 3px solid #c9a84c;
+            padding-left: 10px;
+            margin-bottom: 18px;
+        }
+
+        /* Experience */
         .exp-item {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
-
         .exp-item:last-child { margin-bottom: 0; }
-
-        .exp-row {
+        .exp-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             gap: 12px;
         }
-
         .exp-role {
             font-size: 11pt;
             font-weight: 700;
-            color: #1a1a1a;
+            color: #1e2d3d;
         }
-
         .exp-date {
-            font-size: 9.5pt;
-            color: #666;
+            font-size: 9pt;
+            color: #888;
             white-space: nowrap;
             flex-shrink: 0;
         }
-
         .exp-company {
+            font-size: 9.5pt;
+            color: #c9a84c;
+            font-style: italic;
+            margin-top: 2px;
+        }
+        .exp-bullets {
+            margin-top: 6px;
+            padding-left: 0;
+            list-style: none;
+        }
+        .exp-bullets li {
             font-size: 10pt;
-            color: #555;
-            margin-top: 1px;
+            color: #444;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+        .exp-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 2px;
+            color: #c9a84c;
+        }
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 8px;
+        }
+        .exp-tag {
+            font-size: 8pt;
+            color: #445566;
+            border: 1px solid #c8d4e0;
+            border-radius: 4px;
+            padding: 2px 8px;
         }
 
-        .exp-desc {
-            font-size: 10.5pt;
-            color: #333;
-            margin-top: 4px;
-        }
-
-        /* ── Skills grid ── */
-        .skills-grid {
+        /* Projects grid */
+        .projects-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px 32px;
+            gap: 12px;
         }
-
-        .skill-group { }
-
-        .skill-group-label {
-            font-size: 10pt;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 2px;
+        .project-card {
+            border: 1px solid #dde4ec;
+            border-radius: 8px;
+            padding: 14px 15px;
         }
-
-        .skill-group-values {
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .project-name {
             font-size: 10.5pt;
-            color: #333;
+            font-weight: 700;
+            color: #1e6fa8;
+            text-decoration: none;
         }
+        .project-name:hover { text-decoration: underline; }
+        .badge-destacado {
+            font-size: 7.5pt;
+            font-weight: 700;
+            color: #fff;
+            background: #e07b2a;
+            border-radius: 4px;
+            padding: 1px 7px;
+        }
+        .project-desc {
+            font-size: 9.5pt;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.45;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        .project-tag {
+            font-size: 8pt;
+            color: #445566;
+            border: 1px solid #c8d4e0;
+            border-radius: 4px;
+            padding: 1px 7px;
+        }
+        .project-link {
+            font-size: 8.5pt;
+            color: #666;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .project-link::before {
+            content: "▪";
+            color: #1e6fa8;
+        }
+        .project-link:hover { color: #1e6fa8; }
 
-        /* ── Print styles ── */
+        /* ── Print ── */
         @media print {
-            body {
-                background: #fff;
-                font-size: 10pt;
-            }
-
+            body { background: #fff; font-size: 9.5pt; }
             .print-bar { display: none; }
-
             .cv {
                 margin: 0;
-                padding: 28px 36px;
-                box-shadow: none;
                 max-width: 100%;
+                box-shadow: none;
             }
-
-            .cv-section { page-break-inside: avoid; }
-
-            a { color: #1a1a1a; }
+            .section { page-break-inside: avoid; }
+            .exp-item { page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -207,116 +404,261 @@
 
     <div class="cv">
 
-        <!-- HEADER -->
-        <header class="cv-header">
-            <div class="cv-name">Javier Lanau Gómez</div>
-            <div class="cv-role">Desarrollador Junior Full-Stack &nbsp;·&nbsp; Técnico Superior DAM</div>
-            <div class="cv-contact">
-                <span>Madrid, España</span>
-                <a href="mailto:j.lanau.gomez@gmail.com">j.lanau.gomez@gmail.com</a>
-                <a href="tel:+34635500186">+34 635 500 186</a>
-                <a href="https://github.com/JavierLanauGomez" target="_blank">github.com/JavierLanauGomez</a>
-                <a href="https://www.linkedin.com/in/javierlanaugomez" target="_blank">linkedin.com/in/javierlanaugomez</a>
-            </div>
-        </header>
+        <!-- ══════ SIDEBAR ══════ -->
+        <aside class="sidebar">
 
-        <!-- PERFIL -->
-        <section class="cv-section">
-            <h2 class="cv-section-title">Perfil Profesional</h2>
-            <p>
-                Desarrollador junior con formación en Desarrollo de Aplicaciones Multiplataforma (DAM) y base técnica sólida en Java, Python, bases de datos relacionales y desarrollo web. Experiencia real en proyectos colaborativos con estructura profesional (3XA, 3xa Projekt) y proyectos personales full-stack. Orientado al código limpio, buenas prácticas y la evolución continua hacia un perfil full-stack moderno.
-            </p>
-        </section>
-
-        <!-- EXPERIENCIA Y PROYECTOS -->
-        <section class="cv-section">
-            <h2 class="cv-section-title">Experiencia y Proyectos</h2>
-
-            <div class="exp-item">
-                <div class="exp-row">
-                    <span class="exp-role">Colaborador · 3XA — Plataforma educativa</span>
-                    <span class="exp-date">En desarrollo</span>
-                </div>
-                <div class="exp-company">learn.3xa.es</div>
-                <p class="exp-desc">Desarrollo y mantenimiento de plataforma educativa en entorno real con estructura profesional. Trabajo en equipo sobre codebase activo con revisiones de código y metodologías colaborativas.</p>
-                <p class="exp-desc"><strong>Stack:</strong> PHP · Laravel · HTML · CSS · JavaScript</p>
+            <div class="sidebar-profile">
+                <img src="JavierLanau2.png" alt="Javier Lanau Gómez" class="sidebar-photo">
+                <div class="sidebar-name">Javier Lanau Gómez</div>
+                <div class="sidebar-role">Full-Stack Developer</div>
             </div>
 
-            <div class="exp-item">
-                <div class="exp-row">
-                    <span class="exp-role">Colaborador · 3xa Projekt</span>
-                    <span class="exp-date">En desarrollo</span>
-                </div>
-                <div class="exp-company">3xa.es/projekt.html</div>
-                <p class="exp-desc">Contribución al desarrollo y mejora continua de la plataforma. Implementación de nuevas funcionalidades y mantenimiento del código existente.</p>
-                <p class="exp-desc"><strong>Stack:</strong> PHP · JavaScript · TypeScript · CSS · HTML</p>
+            <!-- Contacto -->
+            <div>
+                <div class="sb-title">Contacto</div>
+                <ul class="contact-list">
+                    <li><span class="icon">📱</span> 635 500 186</li>
+                    <li><span class="icon">✉</span> <a href="mailto:j.lanau.gomez@gmail.com">j.lanau.gomez@gmail.com</a></li>
+                    <li><span class="icon">🌐</span> <a href="https://javierlanaugomez.es" target="_blank">javierlanaugomez.es</a></li>
+                    <li><span class="icon">💼</span> <a href="https://linkedin.com/in/javierlanaugomez" target="_blank">/in/javierlanaugomez</a></li>
+                    <li><span class="icon">💻</span> <a href="https://github.com/JavierLanauGomez" target="_blank">/JavierLanauGomez</a></li>
+                    <li><span class="icon">📍</span> Madrid, España</li>
+                    <li><span class="icon">🎂</span> 28 oct. 1981</li>
+                </ul>
             </div>
 
-            <div class="exp-item">
-                <div class="exp-row">
-                    <span class="exp-role">Proyecto Personal · TiendaAero</span>
-                    <span class="exp-date">En desarrollo</span>
+            <!-- Habilidades -->
+            <div>
+                <div class="sb-title">Habilidades</div>
+                <div class="skill-category">
+                    <div class="skill-cat-label">Backend</div>
+                    <div class="skill-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Spring Boot</span>
+                        <span class="tag">Spring Data JPA</span>
+                        <span class="tag">Spring Security</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">APIs REST</span>
+                        <span class="tag">MySQL</span>
+                    </div>
                 </div>
-                <div class="exp-company">github.com/JavierLanauGomez/TiendaAero</div>
-                <p class="exp-desc">Sistema full-stack para tienda de aeromodelismo. API REST documentada con autenticación JWT, base de datos relacional normalizada y frontend SPA. Arquitectura completa desde el backend hasta la interfaz de usuario.</p>
-                <p class="exp-desc"><strong>Stack:</strong> Python · FastAPI · MySQL · JWT · HTML · CSS · JavaScript</p>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-row">
-                    <span class="exp-role">Proyecto Personal · Landing Page / Portfolio</span>
-                    <span class="exp-date">2025 – Actualidad</span>
+                <div class="skill-category">
+                    <div class="skill-cat-label">Frontend</div>
+                    <div class="skill-tags">
+                        <span class="tag">Angular</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML5 &amp; CSS3</span>
+                        <span class="tag">Responsive</span>
+                    </div>
                 </div>
-                <div class="exp-company">github.com/JavierLanauGomez/Landing-Page &nbsp;·&nbsp; javierlanaugomez.github.io</div>
-                <p class="exp-desc">Portfolio personal desarrollado desde cero. Diseño responsive, animaciones CSS personalizadas y microinteracciones. Publicado en GitHub Pages como carta de presentación profesional.</p>
-                <p class="exp-desc"><strong>Stack:</strong> HTML5 · CSS3 · JavaScript · Responsive Design</p>
-            </div>
-
-            <div class="exp-item">
-                <div class="exp-row">
-                    <span class="exp-role">Formación · Técnico Superior en DAM</span>
-                    <span class="exp-date">2022 – 2026</span>
-                </div>
-                <div class="exp-company">Madrid</div>
-                <p class="exp-desc">Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma. Programación orientada a objetos en Java, bases de datos relacionales, desarrollo Android, patrones de diseño, trabajo en equipo y metodologías ágiles.</p>
-            </div>
-        </section>
-
-        <!-- HABILIDADES TÉCNICAS -->
-        <section class="cv-section">
-            <h2 class="cv-section-title">Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <div class="skill-group-label">Lenguajes</div>
-                    <div class="skill-group-values">Java &nbsp;·&nbsp; Python &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; HTML &nbsp;·&nbsp; CSS</div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-group-label">Backend &amp; Bases de Datos</div>
-                    <div class="skill-group-values">FastAPI &nbsp;·&nbsp; MySQL &nbsp;·&nbsp; SQLite &nbsp;·&nbsp; JWT &nbsp;·&nbsp; REST API</div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-group-label">Frontend</div>
-                    <div class="skill-group-values">HTML5 &nbsp;·&nbsp; CSS3 &nbsp;·&nbsp; JavaScript DOM &nbsp;·&nbsp; Responsive Design &nbsp;·&nbsp; Consumo de APIs</div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-group-label">Herramientas</div>
-                    <div class="skill-group-values">Git &nbsp;·&nbsp; GitHub &nbsp;·&nbsp; Android Studio &nbsp;·&nbsp; VS Code</div>
+                <div class="skill-category">
+                    <div class="skill-cat-label">Herramientas</div>
+                    <div class="skill-tags">
+                        <span class="tag">Git &amp; GitHub</span>
+                        <span class="tag">Maven</span>
+                        <span class="tag">Postman</span>
+                        <span class="tag">VS Code</span>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <!-- APRENDIZAJE CONTINUO -->
-        <section class="cv-section">
-            <h2 class="cv-section-title">Aprendizaje Continuo</h2>
-            <p>React &nbsp;·&nbsp; Spring &nbsp;·&nbsp; Node.js &nbsp;·&nbsp; Arquitecturas full-stack modernas</p>
-        </section>
+            <!-- Formación -->
+            <div>
+                <div class="sb-title">Formación</div>
+                <div class="edu-item">
+                    <div class="edu-title">Técnico Superior en DAM</div>
+                    <div class="edu-meta">2022 – 2026 · IES Brianda de Mendoza</div>
+                    <div class="edu-stack">Java · MySQL · Android · Ágiles</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">PAU – Acceso Universidad</div>
+                    <div class="edu-meta">2021 · UNED</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">Graduado en ESO</div>
+                    <div class="edu-meta">1997 – 1998 · IES Palomeras Vallecas</div>
+                </div>
+            </div>
 
-        <!-- IDIOMAS -->
-        <section class="cv-section">
-            <h2 class="cv-section-title">Idiomas</h2>
-            <p>Español (nativo) &nbsp;·&nbsp; Inglés (nivel intermedio)</p>
-        </section>
+            <!-- Certificaciones -->
+            <div>
+                <div class="sb-title">Certificaciones</div>
+                <div class="cert-item">
+                    <div class="cert-name">Spring Framework &amp; Spring Boot</div>
+                    <div class="cert-meta">Udemy · Andrés Guzmán · 65,5h</div>
+                    <div class="cert-meta">Spring MVC · JPA · Security · JWT</div>
+                </div>
+            </div>
 
+            <!-- Idiomas -->
+            <div>
+                <div class="sb-title">Idiomas</div>
+                <div class="lang-list">
+                    <div class="lang-row">
+                        <span class="lang-name">Español</span>
+                        <span class="lang-level">Nativo</span>
+                    </div>
+                    <div class="lang-row">
+                        <span class="lang-name">Inglés</span>
+                        <span class="lang-level">Técnico</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- ══════ MAIN ══════ -->
+        <main class="main">
+
+            <header class="main-header">
+                <div class="main-name">Javier Lanau Gómez</div>
+                <div class="main-role">Desarrollador Full-Stack · Backend Focus</div>
+                <p class="main-summary">
+                    Desarrollador Full-Stack con formación en DAM y experiencia real en producción. Especializado en
+                    backend con Java y Spring Boot, con dominio del frontend (HTML5, CSS3, JavaScript, TypeScript,
+                    Angular). Experiencia en entornos colaborativos con Git y capacidad demostrada de adaptación en
+                    entornos exigentes.
+                </p>
+            </header>
+
+            <!-- Experiencia laboral -->
+            <section class="section">
+                <h2 class="section-title">Experiencia Laboral</h2>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Desarrollador · 3XA Plataforma Educativa</span>
+                        <span class="exp-date">Mar 2026 – May 2026</span>
+                    </div>
+                    <div class="exp-company">3XA – learn.3xa.es</div>
+                    <ul class="exp-bullets">
+                        <li>Desarrollo de plataforma e-learning en producción</li>
+                        <li>Implementación de componentes UI con gradientes de marca</li>
+                        <li>Optimización de estilos CSS y diseño responsive</li>
+                        <li>Trabajo colaborativo con Git en entorno profesional</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="exp-tag">HTML5</span>
+                        <span class="exp-tag">CSS3</span>
+                        <span class="exp-tag">JavaScript</span>
+                        <span class="exp-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Desarrollador · Freelance</span>
+                        <span class="exp-date">Abr 2025 – Ene 2026</span>
+                    </div>
+                    <div class="exp-company">3XA Projekt – Sistema de Gestión (Autónomo)</div>
+                    <ul class="exp-bullets">
+                        <li>Desarrollo de interfaces para sistema empresarial</li>
+                        <li>Implementación de componentes interactivos con TypeScript</li>
+                        <li>Optimización de rendimiento y corrección de incidencias en producción</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span class="exp-tag">JavaScript</span>
+                        <span class="exp-tag">TypeScript</span>
+                        <span class="exp-tag">HTML5</span>
+                        <span class="exp-tag">CSS3</span>
+                        <span class="exp-tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Operario Industrial</span>
+                        <span class="exp-date">Feb 2012 – Ene 2026</span>
+                    </div>
+                    <div class="exp-company">Metal System</div>
+                    <ul class="exp-bullets">
+                        <li>Trabajo en cadena de producción y montaje industrial en entorno fabril</li>
+                        <li>Adaptación a ritmos de producción exigentes y control de calidad</li>
+                        <li>Experiencia en entorno industrial con maquinaria y procesos estandarizados</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-role">Operador de Grúa Móvil Autopropulsada y Camión Grúa</span>
+                        <span class="exp-date">2004 – 2012</span>
+                    </div>
+                    <div class="exp-company">Grúas J. Rubio / Técnicas de Bombeo y Grúas</div>
+                    <ul class="exp-bullets">
+                        <li>Manejo de grúa móvil autopropulsada y camión grúa en obras de construcción</li>
+                        <li>Trabajo bajo presión con alta exigencia de precisión y seguridad</li>
+                        <li>Coordinación con equipos en entornos de alto riesgo</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Proyectos personales -->
+            <section class="section">
+                <h2 class="section-title">Proyectos Personales</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <a href="https://github.com/JavierLanauGomez/Task-Manager-Api" target="_blank" class="project-name">Task-Manager-API</a>
+                            <span class="badge-destacado">destacado</span>
+                        </div>
+                        <p class="project-desc">API REST de gestión de tareas. Arquitectura en capas, validación, excepciones y CRUD sobre MySQL.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">JPA</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">REST</span>
+                        </div>
+                        <a href="https://github.com/JavierLanauGomez/Task-Manager-Api" target="_blank" class="project-link">github.com/.../Task-Manager-Api</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <a href="https://github.com/JavierLanauGomez/Angular" target="_blank" class="project-name">Angular – Ejercicios y Proyecto</a>
+                        </div>
+                        <p class="project-desc">Pequeños ejercicios y proyecto completo en Angular con componentes, servicios y routing.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Angular</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                        <a href="https://github.com/JavierLanauGomez/Angular" target="_blank" class="project-link">github.com/.../Angular</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <a href="https://github.com/JavierLanauGomez/TiendaAero" target="_blank" class="project-name">TiendaAero</a>
+                        </div>
+                        <p class="project-desc">Tienda online de aeromodelismo con club de vuelo. SPA responsive con integración API REST.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">MySQL</span>
+                        </div>
+                        <a href="https://github.com/JavierLanauGomez/TiendaAero" target="_blank" class="project-link">github.com/.../TiendaAero</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <a href="https://github.com/JavierLanauGomez/Landing-Page" target="_blank" class="project-name">Landing Page</a>
+                        </div>
+                        <p class="project-desc">Landing page responsive con diseño moderno, animaciones CSS y buenas prácticas de maquetación.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/JavierLanauGomez/Landing-Page" target="_blank" class="project-link">github.com/.../Landing-Page</a>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
     </div>
 
 </body>
