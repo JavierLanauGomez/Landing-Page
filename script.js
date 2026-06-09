@@ -143,4 +143,45 @@ if (formularioContacto) {
             botonEnviar.innerHTML = 'Enviar <span class="btn-arrow">↗</span>';
         }
     });
-}s
+}
+
+// ===== DARK MODE =====
+const html = document.documentElement;
+const temaGuardado = localStorage.getItem('tema');
+if (temaGuardado) html.setAttribute('data-theme', temaGuardado);
+
+const botonTema = document.getElementById('btn-tema');
+if (botonTema) {
+    const etiquetaActual = html.getAttribute('data-theme') === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro';
+    botonTema.setAttribute('aria-label', etiquetaActual);
+
+    botonTema.addEventListener('click', () => {
+        const actual = html.getAttribute('data-theme');
+        const nuevo = actual === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', nuevo);
+        localStorage.setItem('tema', nuevo);
+        botonTema.setAttribute('aria-label', nuevo === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro');
+    });
+}
+
+// ===== BARRA DE PROGRESO DE LECTURA =====
+const barraProgreso = document.getElementById('progress-bar');
+const actualizarProgreso = () => {
+    if (!barraProgreso) return;
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+    const progreso = scrollTotal > 0 ? (window.scrollY / scrollTotal) * 100 : 0;
+    barraProgreso.style.width = progreso + '%';
+};
+window.addEventListener('scroll', actualizarProgreso, { passive: true });
+
+// ===== BOTÓN VOLVER ARRIBA =====
+const botonArriba = document.getElementById('btn-arriba');
+if (botonArriba) {
+    window.addEventListener('scroll', () => {
+        botonArriba.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    botonArriba.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
